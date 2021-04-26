@@ -16,7 +16,7 @@
             <input type="radio" name="users" value="個人" checked/>個人
             <input type="radio" name="users" value="部署">部署
         </p>
-        <br><br>
+        <br>
         <lavel for="registrant">登録者名 </lavel>
         <input type="text" name="registrant">
         <br><br>
