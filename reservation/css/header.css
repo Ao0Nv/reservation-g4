@@ -1,0 +1,18 @@
+* {
+    margin:0;
+    padding:0;
+  }
+  header {
+    width: 100%;
+    padding: 15px 0;
+    text-align: left;
+    background-color: skyblue;
+  }
+  header .headline{
+    font-size: 32px;
+    margin-left: 20px;
+  }
+
+  #img-logo{
+    width: 250px;
+  }
