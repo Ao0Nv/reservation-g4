@@ -10,8 +10,7 @@
 <?php include(dirname(__FILE__). '/include/header.php'); ?>
 <body>
     <h2>予約</h2>
-    <p></p>
-    <p></p>
+    <br><br>
     <form action = "reserve.php" method = "post">
         <p>利用者：
             <input type="radio" name="users" value="個人" checked/>個人
@@ -19,8 +18,7 @@
         </p>
         <lavel for="registrant">登録者名 </lavel>
         <input type="text" name="registrant">
-        <p></p>
-        <p></p>
+        <br><br>
         <lavel for="conf_room">会議室 </lavel>
         <select name='conf_room'>
             <option value='roomA'>会議室A</option>
@@ -32,8 +30,7 @@
             <option value='semi_room'>セミナー室</option>
             <option value='b_room'>大会議室</option>
         </select> 
-        <p></p>
-        <p></p>
+        <br><br>
         <lavel for="equipment">備品 </lavel>
         <select name='equipment'>
             <option value='young'>EPZON EP1010</option>
@@ -45,8 +42,7 @@
             <option value='senior'>脚立</option>
             <option value='senior'>巻コード</option>
         </select>
-        <p></p>
-        <p></p>
+        <br><br>
         <lavel for="registrant">備品数 </lavel>
         <select name='equipment_num'>
             <option value='1'>1</option>
@@ -60,8 +56,7 @@
             <option value='9'>9</option>
             <option value='10'>10</option>
         </select>
-        <p></p>
-        <p></p>
+        <br><br>
         <lavel for="month">予約日 </lavel>
         <select name='month'>
             <option value='1'>1</option>
@@ -112,11 +107,9 @@
             <option value='31'>31</option>
         </select>
         日
-        <p></p>
-        <p></p>
+        <br><br>
 
-        <p></p>
-        <p></p>
+        <br>
         <input type="submit" value="予約確定">
     </form>
 
