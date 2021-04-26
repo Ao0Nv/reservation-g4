@@ -12,7 +12,7 @@
     <h2>予約</h2>
     <br><br>
     <form action = "reserve.php" method = "post">
-        <p>利用者：
+        <p>利用者
             <input type="radio" name="users" value="個人" checked/>個人
             <input type="radio" name="users" value="部署">部署
         </p>
@@ -109,9 +109,17 @@
         </select>
         日
         <br><br>
-
+        <input type="time" name="time_stt" value="9:00" min="9:00" max="17:00" step="900">
+        ～
+        <input type="time" name="time_end" value="9:00" min="9:00" max="17:00" step="900">
         <br>
         <input type="submit" value="予約確定">
+        <br><br>
+        <lavel for="num_person">人数 </lavel>
+        <input type="text" name="num_person">
+        <br><br>
+        <lavel for="purpose">人数 </lavel>
+        <input type="text" name="purpose" size="100">
     </form>
 
 
