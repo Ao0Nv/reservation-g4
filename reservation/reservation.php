@@ -22,6 +22,7 @@
         <br><br>
         <lavel for="conf_room">会議室 </lavel>
         <select name='conf_room'>
+        <option value='null'> ― </option>
             <option value='roomA'>会議室A</option>
             <option value='roomB'>会議室B</option>
             <option value='roomC'>会議室C</option>
@@ -34,18 +35,20 @@
         <br><br>
         <lavel for="equipment">備品 </lavel>
         <select name='equipment'>
-            <option value='young'>EPZON EP1010</option>
-            <option value='middle'>EPZON EPS500</option>
-            <option value='senior'>H実業　SKREEN60</option>
-            <option value='senior'>H実業　SKREEN150</option>
-            <option value='senior'>無線マイクロフォン</option>
-            <option value='senior'>OMKYO</option>
-            <option value='senior'>脚立</option>
+            <option value='null'> ― </option>
+            <option value='ep_1010'>EPZON EP1010</option>
+            <option value='ep_500'>EPZON EPS500</option>
+            <option value='skreen60'>H実業　SKREEN60</option>
+            <option value='skreeen150'>H実業　SKREEN150</option>
+            <option value='microphone'>無線マイクロフォン</option>
+            <option value='omkyo'>OMKYO</option>
+            <option value='stepladder'>脚立</option>
             <option value='senior'>巻コード</option>
         </select>
         <br><br>
         <lavel for="registrant">備品数 </lavel>
         <select name='equipment_num'>
+            <option value='null'> ― </option>
             <option value='1'>1</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
@@ -60,6 +63,7 @@
         <br><br>
         <lavel for="month">予約日 </lavel>
         <select name='month'>
+            <option value='null'> ― </option>
             <option value='1'>1</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
@@ -75,6 +79,7 @@
         </select> 
         月
         <select name='day'>
+            <option value='null'> ― </option>
             <option value='1'>1</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
@@ -121,7 +126,7 @@
         <br><br>
         <input type="submit" value="予約確定">
     </form>
-
+    <br><br>
 
 </body>
 <?php include(dirname(__FILE__). '/include/footer.php'); ?>
