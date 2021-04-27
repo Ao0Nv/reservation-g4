@@ -109,17 +109,17 @@
         </select>
         日
         <br><br>
-        <input type="time" name="time_stt" value="9:00" min="9:00" max="17:00" step="900">
+        <input type="time" name="time_stt" step="900" value="9:00" min="9:00" max="17:00">
         ～
-        <input type="time" name="time_end" value="9:00" min="9:00" max="17:00" step="900">
-        <br>
-        <input type="submit" value="予約確定">
+        <input type="time" name="time_end" step="900" value="9:00" min="9:00" max="17:00">
         <br><br>
         <lavel for="num_person">人数 </lavel>
         <input type="text" name="num_person">
         <br><br>
-        <lavel for="purpose">人数 </lavel>
+        <lavel for="purpose">目的 </lavel>
         <input type="text" name="purpose" size="100">
+        <br><br>
+        <input type="submit" value="予約確定">
     </form>
 
 
