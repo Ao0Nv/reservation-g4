@@ -12,9 +12,9 @@
     <h2>予約</h2>
     <br><br>
     <form action = "reserve.php" method = "post">
-        <p>利用者
-            <input type="radio" name="users" value="個人" checked/>個人
-            <input type="radio" name="users" value="部署">部署
+        利用者
+        <label><input type="radio" id="user0" name="user" onClick="userflg0(this.checked);"/> 個人</label> 
+        <label><input type="radio" id="user1" name="user" onClick="userflg1(this.checked);"/> 部署</label>
         </p>
         <br>
         <lavel for="user">利用者名 </lavel>
@@ -120,16 +120,33 @@
         <input type="time" name="time_end" step="900" value="9:00" min="9:00" max="17:00">
         <br><br>
         <lavel for="num_person">人数 </lavel>
-        <input type="text" name="num_person">
+        <input type="text" name="num_person" id="user" value="" disabled="disabled">
         <br><br>
         <lavel for="purpose">目的 </lavel>
         <input type="text" name="purpose" size="100">
         <br><br>
         <input type="submit" value="予約確定">
     </form>
-    <p>
-    </p>
+    <br><br>
 
 </body>
 <?php include(dirname(__FILE__). '/include/footer.php'); ?>
+
+<script>
+  function userflg0(ischecked){
+    if(ischecked == true){
+      document.getElementById("user").disabled = false;
+    } else {
+      document.getElementById("user").disabled = true;
+    }
+  }
+
+  function userflg1(ischecked){
+    if(ischecked == true){
+      document.getElementById("user").disabled = true;
+    } else {
+      document.getElementById("user").disabled = false;
+    }
+  }
+  </script>
 </html>
