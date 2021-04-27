@@ -17,8 +17,8 @@
             <input type="radio" name="users" value="部署">部署
         </p>
         <br>
-        <lavel for="registrant">登録者名 </lavel>
-        <input type="text" name="registrant">
+        <lavel for="user">利用者名 </lavel>
+        <input type="text" name="user">
         <br><br>
         <lavel for="conf_room">会議室 </lavel>
         <select name='conf_room'>
@@ -46,7 +46,7 @@
             <option value='senior'>巻コード</option>
         </select>
         <br><br>
-        <lavel for="registrant">備品数 </lavel>
+        <lavel for="equipment_num">備品数 </lavel>
         <select name='equipment_num'>
             <option hidden value='null'> ― </option>
             <option value='1'>1</option>
@@ -114,7 +114,8 @@
         </select>
         日
         <br><br>
-        <input type="time" name="time_stt" step="900" value="9:00" min="9:00" max="17:00">
+        予約時間
+        <input type="time" name="time_start" step="900" value="9:00" min="9:00" max="17:00">
         ～
         <input type="time" name="time_end" step="900" value="9:00" min="9:00" max="17:00">
         <br><br>
@@ -126,7 +127,8 @@
         <br><br>
         <input type="submit" value="予約確定">
     </form>
-    <br><br>
+    <p>
+    </p>
 
 </body>
 <?php include(dirname(__FILE__). '/include/footer.php'); ?>
