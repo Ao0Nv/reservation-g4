@@ -132,33 +132,5 @@
 </body>
 <?php include(dirname(__FILE__). '/include/footer.php'); ?>
 
-
-<!--
-<?
-    if($_POST['user']=="aaa")
-    {
-        echo 'aaa'
-    }
-
-
-?>
--->
-
-<script>
-  function userflg0(ischecked){
-    if(ischecked == true){
-      document.getElementById("user").disabled = false;
-    } else {
-      document.getElementById("user").disabled = true;
-    }
-  }
-
-  function userflg1(ischecked){
-    if(ischecked == true){
-      document.getElementById("user").disabled = true;
-    } else {
-      document.getElementById("user").disabled = false;
-    }
-  }
   </script>
 </html>
