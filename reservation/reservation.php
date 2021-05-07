@@ -17,10 +17,10 @@
         <label><input type="radio" id="user1" name="registant" onClick="userflg1(this.checked);"/> 部署</label>
         </p>
         <br>
-        <lavel for="user">利用者名 　</lavel>
+        <lavel for="user">利用者名 </lavel>
         <input type="text" name="user">
         <br><br>
-        <lavel for="conf_room">会議室　　 </lavel>
+        <lavel for="conf_room">会議室　 </lavel>
         <select name='conf_room'>
             <option hidden value='null'> ― </option>
             <option value='roomA'>会議室A</option>
@@ -33,9 +33,9 @@
             <option value='b_room'>大会議室</option>
         </select> 
         <br><br>
-        <lavel for="equipment">備品　　 　</lavel>
+        <lavel for="equipment">備品　　 </lavel>
         <select name='equipment'>
-            <option hidden value='null'>      ——————      </option>
+            <option hidden value='null'> ― </option>
             <option value='ep_1010'>EPZON EP1010</option>
             <option value='ep_500'>EPZON EPS500</option>
             <option value='skreen60'>H実業　SKREEN60</option>
@@ -46,7 +46,7 @@
             <option value='senior'>巻コード</option>
         </select>
         <br><br>
-        <lavel for="equipment_num">備品数　 　</lavel>
+        <lavel for="equipment_num">備品数　 </lavel>
         <select name='equipment_num'>
             <option hidden value='null'> ― </option>
             <option value='1'>1</option>
@@ -61,7 +61,7 @@
             <option value='10'>10</option>
         </select>
         <br><br>
-        <lavel for="month">予約日  　</lavel>
+        <lavel for="month">予約日  </lavel>
         <select name='month'>
             <option hidden value='null'> ― </option>
             <option value='1'>1</option>
@@ -119,7 +119,7 @@
         ～
         <input type="time" name="time_end" step="900" value="9:00" min="9:00" max="17:00">
         <br><br>
-        <lavel for="num_person">人数　　 　</lavel>
+        <lavel for="num_person">人数　　 </lavel>
         <input type="text" name="num_person" id="user" value="" disabled="disabled">
         <br><br>
         <lavel for="purpose">目的 　 </lavel>
@@ -132,6 +132,8 @@
 </body>
 <?php include(dirname(__FILE__). '/include/footer.php'); ?>
 
+
+<!--
 <?
     if($_POST['user']=="aaa")
     {
@@ -140,6 +142,7 @@
 
 
 ?>
+-->
 
 <script>
   function userflg0(ischecked){
