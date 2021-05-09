@@ -128,8 +128,6 @@
         <input type="submit" value="予約確定">
     </form>
     <br><br>
-    <button type=“button” onclick="location.href='index.php'">戻る</button>
-    <br><br>
     <script type="text/javascript">
       function userflg0(ischecked)
       {
@@ -154,6 +152,8 @@
         }
       }
     </script>
+    <br><br>
+    <button type=“button” onclick="location.href='index.php'">戻る</button>
   </body>
   <?php include(dirname(__FILE__). '/include/footer.php'); ?>
 
