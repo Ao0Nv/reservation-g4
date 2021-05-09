@@ -22,7 +22,7 @@
         <br><br>
         <lavel for="conf_room">会議室　 </lavel>
         <select name='conf_room'>
-            <option hidden value='null'>　　—――—　　</option>
+            <option hidden value='null'>——————</option>
             <option value='roomA'>会議室A</option>
             <option value='roomB'>会議室B</option>
             <option value='roomC'>会議室C</option>
@@ -35,7 +35,7 @@
         <br><br>
         <lavel for="equipment">備品　　 </lavel>
         <select name='equipment'>
-            <option hidden value='null'>　 　—―—―—　 　</option>
+            <option hidden value='null'>—————————————</option>
             <option value='ep_1010'>EPZON EP1010</option>
             <option value='ep_500'>EPZON EPS500</option>
             <option value='skreen60'>H実業　SKREEN60</option>
@@ -127,6 +127,8 @@
         <br><br>
         <input type="submit" value="予約確定">
     </form>
+    <br><br>
+    <button type=“button” onclick="location.href='index.php'">戻る</button>
     <br><br>
     <script type="text/javascript">
       function userflg0(ischecked)
