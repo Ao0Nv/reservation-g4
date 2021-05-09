@@ -10,7 +10,7 @@
 <?php include(dirname(__FILE__). '/include/header.php'); ?>
 <body>
     <h2>予約</h2>
-    <br><br>
+    <br>
     <form action = "reservate.php" method = "post">
         利用者
         <label><input type="radio" id="user0" name="registant" onClick="userflg0(this.checked);"/> 個人</label> 
