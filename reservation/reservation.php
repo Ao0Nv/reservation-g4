@@ -11,7 +11,7 @@
 <body>
     <h2>予約</h2>
     <br><br>
-    <form action = "reserve.php" method = "post">
+    <form action = "reservate.php" method = "post">
         利用者
         <label><input type="radio" id="user0" name="registant" onClick="userflg0(this.checked);"/> 個人</label> 
         <label><input type="radio" id="user1" name="registant" onClick="userflg1(this.checked);"/> 部署</label>
@@ -128,9 +128,31 @@
         <input type="submit" value="予約確定">
     </form>
     <br><br>
+    <script type="text/javascript">
+      function userflg0(ischecked)
+      {
+        if(ischecked == true)
+        {
+          document.getElementById("user").disabled = false;
+        } 
+        else 
+        {
+          document.getElementById("user").disabled = true;
+        }
+      }
+      function userflg1(ischecked)
+      {
+        if(ischecked == true)
+        {
+          document.getElementById("user").disabled = true;
+        }  
+        else 
+        {
+          document.getElementById("user").disabled = false;
+        }
+      }
+    </script>
+  </body>
+  <?php include(dirname(__FILE__). '/include/footer.php'); ?>
 
-</body>
-<?php include(dirname(__FILE__). '/include/footer.php'); ?>
-
-  </script>
 </html>
