@@ -54,8 +54,9 @@
             $stmt_equipment -> bindParam(":equipment", $equipment, PDO::PARAM_STR);
             $stmt_equipment -> bindParam(":equipment", $equipment_num, PDO::PARAM_INT);
             
-            $stmt_name -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt_detail -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $stmt_reservation -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $stmt_conference_room ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $stmt_equipment -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
             try
             {
