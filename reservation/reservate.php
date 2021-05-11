@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/css/footer.css">
     <title>会議室・備品予約システム</title>
 </head>
+<?php include(dirname(__FILE__). '/include/header.php'); ?>
 <body>
     <?
 
@@ -32,10 +33,15 @@
             $status = "reserved";
             $code = 0;
 
-            $equipment_num
+            $conf_room = $_SESSION['conf_room'];
+            $equipment = $_SESSION['equipment'];
+            $equipment_num = $_SESSION['equipment_num'];
+
             
             $connect = connect_db();
-            $stmt_name = $connect->prepare("INSERT INTO reservation VALUES(:code, :date, :start, :finish, :redistrant, :num_of_people)");
+            $stmt_resv = $connect->prepare("INSERT INTO reservation VALUES(:code, :date, :start, :finish, :redistrant, :num_of_people)");
+            $stmt_conf = $connect->prepare("INSERT INTO conference VALUES(:conf_room)");
+            $stmt_eqpm = $connect->prepare("INSERT INTO equipment VALUES(:equipment, :equipment_num)");
 
             $stmt_reservation -> bindParam(":redistrant", $redistrant, PDO::PARAM_STR);
             $stmt_reservation -> bindParam(":date", $date, PDO::PARAM_STR);
@@ -56,8 +62,8 @@
                 $count_query = $connect -> query("SELECT * FROM reservation");
                 $count = $count_query -> rowCount();
                 $code = $count * 1;
-                $stmt_name -> execute();
-                $stmt_detail -> execute();
+                $stmt_reservation -> execute();
+                $stmt_reservate -> execute();
                 header("Location: index.php");
                 exit();
             }
@@ -68,8 +74,39 @@
         }
         else
         {
-            header("Location: reservation.php");
-            exit();
+
+            if(input_check($registant, 'registrant') and input_check_b($date, 'date') and
+                    input_check_b($start, 'start') and input_check_b($finish, 'finish') and 
+                    input_check_b($num_of_people, 'num_of_people') and input_check_b($purpose, 'purpose'))
+                {
+                    $_SESSION['registant'] = $registant;
+                    $_SESSION['date'] = $date;
+                    $_SESSION['start'] = $start;
+                    $_SESSION['finish'] = $finish;
+                    $_SESSION['num_of_people'] = $num_of_people;
+                    $_SESSION['purpose'] = $purpose;
+
+                    print "<h1></h1>";
+                    print "<p>利用者名:". $registant. "</p>";
+                    print "<p>会議室:". $date. "</p>";
+                    print "<p>備品:". $start. "</p>";
+                    print "<p>備品数:". $finish. "</p>";
+                    print "<p>予約日:". $num_of_peolr. "</p>";
+                    print "<p>予約時間:". $first. "~" . $finish ."</p>";
+                    print "<p>人数:". $num_of_people. "</p>";
+                    print "<p>目的:". $purpose. "</p>";
+                    
+                    print "上記の情報で予約しますか？";
+                    print "<form  method=\"post\">\n";
+                    print "<input type=\"submit\" formaction=\"index.php\" name=\"ok\" value=\"はい\">\n";
+                    print "<input type=\"submit\" formaction=\"reservation.php\"value=\"いいえ\">\n";
+                    print "</form>\n";
+                }
+                else
+                {
+                    header("Location: reservation.php");
+                    exit();
+                }
         }
     ?>
 </body>

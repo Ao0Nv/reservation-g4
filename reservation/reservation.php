@@ -65,12 +65,12 @@
         <input type="date" name='date'>
         <br><br>
         予約時間　
-        <input type="time" name="time_start" value="9:00" min="9:00" max="17:00" step="900">
+        <input type="time" name="start" value="9:00" min="9:00" max="17:00" step="900">
         ～
-        <input type="time" name="time_end" value="9:00" min="9:00" max="17:00" step="900">
+        <input type="time" name="finish" value="9:00" min="9:00" max="17:00" step="900">
         <br><br>
-        <lavel for="num_person">人数　　 </lavel>
-        <input type="text" name="num_person" id="user" value="" disabled="disabled">
+        <lavel for="num_of_person">人数　　 </lavel>
+        <input type="text" name="num_of_person" id="user" value="" disabled="disabled">
         <br><br>
         <lavel for="purpose">目的 　 </lavel>
         <input type="text" name="purpose" size="100">
