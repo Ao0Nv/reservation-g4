@@ -31,6 +31,8 @@
             $purpose = $_SESSION['purpose'];
             $status = "reserved";
             $code = 0;
+
+            $equipment_num
             
             $connect = connect_db();
             $stmt_name = $connect->prepare("INSERT INTO reservation VALUES(:code, :date, :start, :finish, :redistrant, :num_of_people)");
@@ -42,13 +44,10 @@
             $stmt_reservation -> bindParam(":num_of_people", $num_of_people, PDO::PARAM_INT);
             $stmt_reservation -> bindParam(":purpose", $purpose, PDO::PARAM_STR);
 
-
-
-            $stmt_detail -> bindParam(":code", $code, PDO::PARAM_INT);
-            $stmt_detail -> bindParam(":div", $division_inp, PDO::PARAM_STR);
-            $stmt_detail -> bindParam(":fee", $fee_inp, PDO::PARAM_STR);
-            $stmt_detail -> bindParam(":note", $note_inp, PDO::PARAM_STR);
-            $stmt_detail -> bindParam(":att_file", $attach_file, PDO::PARAM_STR);
+            $stmt_conference_room -> bindParam(":conf_room", $conf_room, PDO::PARAM_STR);
+            $stmt_equipment -> bindParam(":equipment", $equipment, PDO::PARAM_STR);
+            $stmt_equipment -> bindParam(":equipment", $equipment_num, PDO::PARAM_INT);
+            
             $stmt_name -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $stmt_detail -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
