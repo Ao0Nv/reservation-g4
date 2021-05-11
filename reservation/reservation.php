@@ -13,12 +13,12 @@
     <br>
     <form action = "reservate.php" method = "post">
         利用者
-        <label><input type="radio" id="user0" name="registant" onClick="userflg0(this.checked);"/> 個人</label> 
-        <label><input type="radio" id="user1" name="registant" onClick="userflg1(this.checked);"/> 部署</label>
+        <label><input type="radio" id="user0" name="user" onClick="userflg0(this.checked);"/> 個人</label> 
+        <label><input type="radio" id="user1" name="user" onClick="userflg1(this.checked);"/> 部署</label>
         </p>
         <br>
-        <lavel for="user">利用者名 </lavel>
-        <input type="text" name="user">
+        <lavel for="registant">利用者名 </lavel>
+        <input type="text" name="registant">
         <br><br>
         <lavel for="conf_room">会議室　 </lavel>
         <select name='conf_room'>
@@ -152,8 +152,6 @@
         }
       }
     </script>
-    <br><br>
-    <button type=“button” onclick="location.href='index.php'">戻る</button>
   </body>
   <?php include(dirname(__FILE__). '/include/footer.php'); ?>
 
