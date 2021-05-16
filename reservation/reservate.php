@@ -15,7 +15,7 @@
 <?php include(dirname(__FILE__). '/include/header.php'); ?>
 <body>
     <h2>予約情報確認ページ</h2>
-    <?
+    <?php
 
 
         $registant_inp = "";
