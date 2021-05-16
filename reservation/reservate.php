@@ -7,6 +7,10 @@
     <link rel="stylesheet" type="text/css" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/footer.css">
     <title>会議室・備品予約システム</title>
+    <?php
+        require_once('include/db_connect.php');
+        session_start();
+    ?>
 </head>
 <?php include(dirname(__FILE__). '/include/header.php'); ?>
 <body>

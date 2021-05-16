@@ -8,7 +8,6 @@
     <title>会議室・備品予約システム</title>
 
     <?php
-            require_once('include/db_connect.php');
             session_start();
     ?>
 
