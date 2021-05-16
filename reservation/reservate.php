@@ -20,7 +20,6 @@
         $num_of_people = "";
         $purpose = "";
         $code = 0;
-        $attach_file = "";
 
         if(isset($_POST["ok"]))
         {
