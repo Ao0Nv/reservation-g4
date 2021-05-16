@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial -scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/footer.css">
     <title>会議室・備品予約システム</title>
@@ -18,17 +18,17 @@
     <?
 
 
-        $registant = "";
-        $date = "";
-        $start = "";
-        $finish = "";
-        $num_of_people = "";
-        $purpose = "";
+        $registant_inp = "";
+        $date_inp = "";
+        $start_inp = "";
+        $finish_inp = "";
+        $num_of_people_inp = "";
+        $purpose_inp = "";
         $code = 0;
 
-        $conf_room = "";
-        $equipment = "";
-        $equipment_num = "";
+        $conf_room_inp = "";
+        $equipment_inp = "";
+        $equipment_num_inp = "";
 
         if(isset($_POST["ok"]))
         {
@@ -84,9 +84,9 @@
         else
         {
 
-            if(input_check($registant_inp, 'registrant') and input_check_b($date_inp, 'date') and
-                    input_check_b($start_inp, 'start') and input_check_b($finish_inp, 'finish') and 
-                    input_check_b($num_of_people_inp, 'num_of_people') and input_check_b($purpose_inp, 'purpose'))
+            if(input_check($registant_inp, 'registrant') and input_check($date_inp, 'date') and
+                    input_check($start_inp, 'start') and input_check($finish_inp, 'finish') and 
+                    input_check($num_of_people_inp, 'num_of_people') and input_check($purpose_inp, 'purpose'))
                 {
                     $_SESSION['registant'] = $registant_inp;
                     $_SESSION['date'] = $date_inp;
