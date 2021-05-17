@@ -59,9 +59,9 @@
             $stmt_equipment -> bindParam(":rsv_equipment", $equipment_inp, PDO::PARAM_STR);
             $stmt_equipment -> bindParam(":rsv_equipment_num", $equipment_num_inp, PDO::PARAM_INT);
             
-            $stmt_reservation -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            /*$stmt_reservation -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $stmt_conference_room ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt_equipment -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $stmt_equipment -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);*/
             
             try
             {
@@ -82,9 +82,9 @@
         else
         {
 
-            if(1)/*input_check($registant_inp, 'registrant') and input_check($date_inp, 'date') and
+            if(input_check($registant_inp, 'registrant') and input_check($date_inp, 'date') and
                     input_check($start_inp, 'start') and input_check($finish_inp, 'finish') and 
-                    input_check($num_of_people_inp, 'num_of_people') and input_check($purpose_inp, 'purpose'))*/
+                    input_check($num_of_people_inp, 'num_of_people') and input_check($purpose_inp, 'purpose'))
                 {
                     $_SESSION['registant'] = $registant_inp;
                     $_SESSION['date'] = $date_inp;
