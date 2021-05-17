@@ -18,7 +18,7 @@
     <?php
 
         $registant_inp = "";
-        $date_inp = date('Y-m-d H:i:s');
+        $date_inp = "";
         $start_inp = "";
         $finish_inp = "";
         $num_of_people_inp = "";
@@ -29,7 +29,7 @@
         $equipment_inp = "";
         $equipment_num_inp = "";
 
-        $registant_inp = $_SESSION["registant"];
+        $registant_inp = $_POST["registant"];
         echo $registant_inp;
         
         /*
@@ -100,10 +100,10 @@
                     print "<br>";
                     print "<h1></h1>";
                     print "<p>利用者名:". $registant_inp. "</p>";
-                    print "<p>会議室:". $date_inp. "</p>";
+                    print "<p>会議室:". $conf_room_inp. "</p>";
                     print "<p>備品:". $start_inp. "</p>";
                     print "<p>備品数:". $finish_inp. "</p>";
-                    print "<p>予約日:". $num_of_people_inp. "</p>";
+                    print "<p>予約日:". $date_inp. "</p>";
                     print "<p>予約時間:". $first_inp. "~" . $finish_inp."</p>";
                     print "<p>人数:". $num_of_people_inp. "</p>";
                     print "<p>目的:". $purpose_inp. "</p>";
