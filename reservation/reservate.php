@@ -73,7 +73,7 @@
                 $code = $count * 1;
                 $stmt_reservation -> execute();
                 $stmt_reservate -> execute();
-                header("Location: reservation.php");
+                //header("Location: reservation.php");
                 exit();
             }
             catch(PDOException $e)
@@ -113,7 +113,7 @@
                 }
                 else
                 {
-                    header("Location: reservation.php");
+                    //header("Location: reservation.php");
                     exit();
                 }
         }
