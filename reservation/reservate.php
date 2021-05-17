@@ -108,10 +108,10 @@
                     print "<h1></h1>";
                     print "<p>利用者名:". $registant_inp. "</p>";
                     print "<p>会議室:". $conf_room_inp. "</p>";
-                    print "<p>備品:". $start_inp. "</p>";
-                    print "<p>備品数:". $finish_inp. "</p>";
+                    print "<p>備品:". $equipment. "</p>";
+                    print "<p>備品数:". $equipment_num_inp. "</p>";
                     print "<p>予約日:". $date_inp. "</p>";
-                    print "<p>予約時間:". $first_inp. "~" . $finish_inp."</p>";
+                    print "<p>予約時間:". $start_inp. "~" . $finish_inp."</p>";
                     print "<p>人数:". $num_of_people_inp. "</p>";
                     print "<p>目的:". $purpose_inp. "</p>";
                     
