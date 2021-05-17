@@ -30,14 +30,14 @@
         $equipment_num_inp = "";
 
         $registant_inp = $_POST["registant"];
-        $conf_room_inp = $_SESSION["conf_room"];
-        $equipment_inp = $_SESSION["equipment"];
-        $equipment_num_inp = $_SESSION["equipment_num"];
-        $date_inp = $_SESSION["date"];
-        $start_inp = $_SESSION["start"];
-        $finish_inp = $_SESSION["finish"];
-        $num_of_people_inp = $_SESSION["num_of_people"];
-        $purpose_inp = $_SESSION["purpose"];
+        $conf_room_inp = $_POST["conf_room"];
+        $equipment_inp = $_POST["equipment"];
+        $equipment_num_inp = $_POST["equipment_num"];
+        $date_inp = $_POST["date"];
+        $start_inp = $_POST["start"];
+        $finish_inp = $_POST["finish"];
+        $num_of_people_inp = $_POST["num_of_people"];
+        $purpose_inp = $_POST["purpose"];
         
         /*
         if(isset($_POST["ok"]))
