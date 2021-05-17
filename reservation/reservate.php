@@ -17,7 +17,6 @@
     <h2>予約情報確認ページ</h2>
     <?php
 
-
         $registant_inp = "";
         $date_inp = "";
         $start_inp = "";
@@ -33,6 +32,9 @@
         if(isset($_POST["ok"]))
         {
             $registant_inp = $_SESSION['registant'];
+            $conf_room_inp = $_SESSION['conf_room'];
+            $equipment_inp = $_SESSION['equipment'];
+            $equipment_num_inp = $_SESSION['equipment_num'];
             $date_inp = $_SESSION['date'];
             $start_inp = $_SESSION['start'];
             $finish_inp = $_SESSION['finish'];
@@ -40,11 +42,6 @@
             $purpose_inp = $_SESSION['purpose'];
             $status_inp = "reserved";
             $code = 0;
-
-            $conf_room_inp = $_SESSION['conf_room'];
-            $equipment_inp = $_SESSION['equipment'];
-            $equipment_num_inp = $_SESSION['equipment_num'];
-
             
             $connect = connect_db();
             $stmt_reservation = $connect->prepare("INSERT INTO reservation VALUES(:code, :rsv_date, :rsv_start, :rsv_finish, :rsv_redistrant, :rsv_num_of_people)");
@@ -72,8 +69,9 @@
                 $count = $count_query -> rowCount();
                 $code = $count * 1;
                 $stmt_reservation -> execute();
-                $stmt_reservate -> execute();
-                //header("Location: reservation.php");
+                $stmt_conference -> execute();
+                $stmt_equipment -> execute();
+                header("Location: reservation.php");
                 exit();
             }
             catch(PDOException $e)
@@ -113,7 +111,7 @@
                 }
                 else
                 {
-                    header("Location: reservation.php");
+                    //header("Location: reservation.php");
                     exit();
                 }
         }

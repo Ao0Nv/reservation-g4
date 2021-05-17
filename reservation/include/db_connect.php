@@ -11,10 +11,13 @@
         return $connect;
     }
 
-    function input_check(&$input, $key){
-        if(isset($_POST[$key]) and $_POST[$key] != ''){
+    function input_check(&$input, $key)
+    {
+        if(isset($_POST[$key]) and $_POST[$key] != '')
+        {
             $input = preg_replace('/[^()ぁ-んァ-ヶｦ-ﾟ一-龠０-９a-zA-Z0-9\-]/', '', $_POST[$key]); 
-            if(empty($input)){
+            if(empty($input))
+            {
                 return false;
             }
             return true;
