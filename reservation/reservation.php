@@ -28,27 +28,27 @@
         <lavel for="conf_room">会議室　 </lavel>
         <select name='conf_room'>
             <option hidden value='null'>選択してください</option>
-            <option value='roomA'>会議室A</option>
-            <option value='roomB'>会議室B</option>
-            <option value='roomC'>会議室C</option>
-            <option value='roomD'>会議室D</option>
-            <option value='s_semi_room'>小セミナー室</option>
-            <option value='s_room'>小会議室</option>
-            <option value='semi_room'>セミナー室</option>
-            <option value='b_room'>大会議室</option>
+            <option value='会議室A'>会議室A</option>
+            <option value='会議室B'>会議室B</option>
+            <option value='会議室C'>会議室C</option>
+            <option value='会議室D'>会議室D</option>
+            <option value='小セミナー室'>小セミナー室</option>
+            <option value='小会議室'>小会議室</option>
+            <option value='セミナー室'>セミナー室</option>
+            <option value='大会議室'>大会議室</option>
         </select> 
         <br><br>
         <lavel for="equipment">備品　　 </lavel>
         <select name='equipment'>
             <option hidden value='null'>選択してください</option>
-            <option value='ep_1010'>EPZON EP1010</option>
-            <option value='ep_500'>EPZON EPS500</option>
-            <option value='skreen60'>H実業　SKREEN60</option>
-            <option value='skreeen150'>H実業　SKREEN150</option>
-            <option value='microphone'>無線マイクロフォン</option>
-            <option value='omkyo'>OMKYO</option>
-            <option value='stepladder'>脚立</option>
-            <option value='senior'>巻コード</option>
+            <option value='EPZON EP1010'>EPZON EP1010</option>
+            <option value='EPZON EPS500'>EPZON EPS500</option>
+            <option value='H実業　SKREEN60'>H実業　SKREEN60</option>
+            <option value='H実業　SKREEN150'>H実業　SKREEN150</option>
+            <option value='無線マイクロフォン'>無線マイクロフォン</option>
+            <option value='OMKYO'>OMKYO</option>
+            <option value='脚立'>脚立</option>
+            <option value='巻コード'>巻コード</option>
         </select>
         <br><br>
         <lavel for="equipment_num">備品数　 </lavel>

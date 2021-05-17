@@ -18,7 +18,7 @@
     <?php
 
         $registant_inp = "";
-        $date_inp = "";
+        $date_inp = date('Y-m-d H:i:s');
         $start_inp = "";
         $finish_inp = "";
         $num_of_people_inp = "";
@@ -29,6 +29,10 @@
         $equipment_inp = "";
         $equipment_num_inp = "";
 
+        $registant_inp = $_SESSION["registant"];
+        echo $registant_inp;
+        
+        /*
         if(isset($_POST["ok"]))
         {
             $registant_inp = $_SESSION["registant"];
@@ -82,10 +86,10 @@
         else
         {
 
-            if(1)/*input_check($registant_inp, 'registrant') and input_check($date_inp, 'date') and
+            if(1)input_check($registant_inp, 'registrant') and input_check($date_inp, 'date') and
                     input_check($start_inp, 'start') and input_check($finish_inp, 'finish') and 
                     input_check($num_of_people_inp, 'num_of_people') and input_check($purpose_inp, 'purpose'))*/
-                {
+                //{
                     /*$_SESSION['registant'] = $registant_inp;
                     $_SESSION['date'] = $date_inp;
                     $_SESSION['start'] = $start_inp;
@@ -93,7 +97,7 @@
                     $_SESSION['num_of_people'] = $num_of_people_inp;
                     $_SESSION['purpose'] = $purpose_inp;*/
 
-                    print "<br><br>";
+                    print "<br>";
                     print "<h1></h1>";
                     print "<p>利用者名:". $registant_inp. "</p>";
                     print "<p>会議室:". $date_inp. "</p>";
@@ -104,20 +108,20 @@
                     print "<p>人数:". $num_of_people_inp. "</p>";
                     print "<p>目的:". $purpose_inp. "</p>";
                     
-                    print "<br><br>";
+                    print "<br>";
 
                     print "上記の情報で予約しますか？";
                     print "<form  method=\"post\">\n";
                     print "<input type=\"submit\" formaction=\"index.php\" name=\"ok\" value=\"はい\">\n";
                     print "<input type=\"submit\" formaction=\"reservation.php\"value=\"いいえ\">\n";
                     print "</form>\n";
-                }
+                /*}
                 else
                 {
                     //header("Location: reservation.php");
                     exit();
                 }
-        }
+        }*/
     ?>
 </body>
 <?php include(dirname(__FILE__). '/include/footer.php'); ?>
