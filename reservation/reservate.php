@@ -60,8 +60,6 @@
             $stmt -> bindParam(":num_of_people_inp", $num_of_people_inp);
             $stmt -> bindParam(":purpose_inp", $purpose_inp);
             
-            //$stmt -> execute();
-            //$connect->commit();
 
             $stmt->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
@@ -101,14 +99,14 @@
 
                 print "<br>";
                 print "<h1></h1>";
-                print "<p>利用者名:". $registant_inp. "</p>";
-                print "<p>会議室　:". $conf_room_inp. "</p>";
-                print "<p>備品　　:". $equipment_inp. "</p>";
-                print "<p>備品数　:". $equipment_num_inp. "</p>";
-                print "<p>予約日　:". $date_inp. "</p>";
-                print "<p>予約時間:". $start_inp. "~" . $finish_inp."</p>";
-                print "<p>人数　　:". $num_of_people_inp. "</p>";
-                print "<p>目的　　:". $purpose_inp. "</p>";
+                print "<p>利用者名:". $_POST['registant']. "</p>";
+                print "<p>会議室　:". $_POST['conf_room']. "</p>";
+                print "<p>備品　　:". $_POST['equipment']. "</p>";
+                print "<p>備品数　:". $_POST['equipment_num']. "</p>";
+                print "<p>予約日　:". $_POST['date']. "</p>";
+                print "<p>予約時間:". $_POST['start']. "~" . $_POST['finish']."</p>";
+                print "<p>人数　　:". $_POST['num_of_people']. "</p>";
+                print "<p>目的　　:". $_POST['purpose']. "</p>";
 
                 print "<br>";
 
