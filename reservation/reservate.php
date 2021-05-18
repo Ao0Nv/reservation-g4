@@ -49,10 +49,11 @@
         $count=$stmt->rowCount();
         echo $count;
         */
+        $code=1;
         
         try
         {
-            $sql="INSERT INTO reservation VALUES('$code', '$date_inp', '$start_inp', '$finish_inp', '$registant_inp', '$num_of_people_inp', '$purpose_inp', 'wait')";
+            $sql="INSERT INTO reservation VALUES($code, $date_inp, $start_inp, $finish_inp, $registant_inp, $num_of_people_inp, $purpose_inp, 'wait')";
             
             $res = $connect->query($sql);
             header("Location: reservation.php");
