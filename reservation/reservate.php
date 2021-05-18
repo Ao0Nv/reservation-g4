@@ -41,6 +41,25 @@
         
         $code = 1;
 
+        print "<br>";
+        print "<h1></h1>";
+        print "<p>利用者名:". $registant_inp. "</p>";
+        print "<p>会議室　:". $conf_room_inp. "</p>";
+        print "<p>備品　　:". $equipment_inp. "</p>";
+        print "<p>備品数　:". $equipment_num_inp. "</p>";
+        print "<p>予約日　:". $date_inp. "</p>";
+        print "<p>予約時間:". $start_inp. "~" . $finish_inp."</p>";
+        print "<p>人数　　:". $num_of_people_inp. "</p>";
+        print "<p>目的　　:". $purpose_inp. "</p>";
+        
+        print "<br>";
+
+        print "上記の情報で予約しますか？";
+        print "<form  method=\"post\">\n";
+        print "<input type=\"submit\" formaction=\"index.php\" name=\"ok\" value=\"はい\">\n";
+        print "<input type=\"submit\" formaction=\"reservation.php\"value=\"いいえ\">\n";
+        print "</form>\n";
+
         try
         {
             $connect = connect_db();
@@ -134,24 +153,7 @@
                     $_SESSION['num_of_people'] = $num_of_people_inp;
                     $_SESSION['purpose'] = $purpose_inp;*/
 
-                    print "<br>";
-                    print "<h1></h1>";
-                    print "<p>利用者名:". $registant_inp. "</p>";
-                    print "<p>会議室　:". $conf_room_inp. "</p>";
-                    print "<p>備品　　:". $equipment_inp. "</p>";
-                    print "<p>備品数　:". $equipment_num_inp. "</p>";
-                    print "<p>予約日　:". $date_inp. "</p>";
-                    print "<p>予約時間:". $start_inp. "~" . $finish_inp."</p>";
-                    print "<p>人数　　:". $num_of_people_inp. "</p>";
-                    print "<p>目的　　:". $purpose_inp. "</p>";
                     
-                    print "<br>";
-
-                    print "上記の情報で予約しますか？";
-                    print "<form  method=\"post\">\n";
-                    print "<input type=\"submit\" formaction=\"index.php\" name=\"ok\" value=\"はい\">\n";
-                    print "<input type=\"submit\" formaction=\"reservation.php\"value=\"いいえ\">\n";
-                    print "</form>\n";
                 /*}
                 else
                 {
