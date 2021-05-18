@@ -49,7 +49,7 @@
 
             $connect = connect_db();
 
-            $sql = 'INSERT INTO reservation VALUES(:code, :date_inp, :start_inp, :finish_inp, :redistrant_inp, :num_of_people_inp)';
+            $sql = 'INSERT INTO reservation VALUES('.$code.', '.$date_inp.', '.$start_inp.', '. $finish_inp.', '. $redistrant_inp.' ,'. $num_of_people_inp.')';
             
             $stmt = $connect->prepare($sql);
             
