@@ -54,12 +54,12 @@
             
             $res = $connect->query($sql);
             header("Location: reservation.php");
-            exit();
+            //exit();
         }
         catch(PDOException $e)
         {
             exit($e->getMessage());
-            die();
+            //die();
         }
         
         
