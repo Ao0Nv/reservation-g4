@@ -40,60 +40,77 @@
         $purpose_inp = $_POST["purpose"];
         
         $connect = connect_db();
+        $stmt_reservation = $connect->prepare("INSERT INTO reservation VALUES(:code, :rsv_date, :rsv_start, :rsv_finish, :rsv_redistrant, :rsv_num_of_people)");
+        $stmt_conference_room = $connect->prepare("INSERT INTO conference VALUES(:rsv_conf_room)");
+        $stmt_equipment = $connect->prepare("INSERT INTO equipment VALUES(:rsv_equipment, :rsv_equipment_num)");
+
+        $stmt_reservation -> bindParam(":rsv_redistrant", $redistrant_inp, PDO::PARAM_STR);
+        $stmt_reservation -> bindParam(":rsv_date", $date_inp, PDO::PARAM_STR);
+        $stmt_reservation -> bindParam(":rsv_start", $start_inp, PDO::PARAM_STR);
+        $stmt_reservation -> bindParam(":rsv_finish", $finish_inp, PDO::PARAM_STR);
+        $stmt_reservation -> bindParam(":rsv_num_of_people", $num_of_people_inp, PDO::PARAM_INT);
+        $stmt_reservation -> bindParam(":rsv_purpose", $purpose_inp, PDO::PARAM_STR);
+
+        $stmt_conference_room -> bindParam(":rsv_conf_room", $conf_room_inp, PDO::PARAM_STR);
+        $stmt_equipment -> bindParam(":rsv_equipment", $equipment_inp, PDO::PARAM_STR);
+        $stmt_equipment -> bindParam(":rsv_equipment_num", $equipment_num_inp, PDO::PARAM_INT);
         
+        $stmt_reservation -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $stmt_conference_room ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $stmt_equipment -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
-        try
-        {
-            $count_query = $connect -> query("SELECT * FROM reservation");
-            $count = $count_query -> rowCount();
-            $code = $count * 1;
-            $stmt_reservation -> execute();
-            $stmt_conference -> execute();
-            $stmt_equipment -> execute();
-            header("Location: reservation.php");
-            exit();
-        }
-        catch(PDOException $e)
-        {
-            exit($e->getMessage());
-        }
-        
-        
-        if(1)/*input_check($registant_inp, 'registrant') and input_check($date_inp, 'date') and
-                input_check($start_inp, 'start') and input_check($finish_inp, 'finish') and 
-                input_check($num_of_people_inp, 'num_of_people') and input_check($purpose_inp, 'purpose'))*/
+            try
             {
-                $_SESSION['registant'] = $registant_inp;
-                $_SESSION['date'] = $date_inp;
-                $_SESSION['start'] = $start_inp;
-                $_SESSION['finish'] = $finish_inp;
-                $_SESSION['num_of_people'] = $num_of_people_inp;
-                $_SESSION['purpose'] = $purpose_inp;
-
-                print "<br>";
-                print "<h1></h1>";
-                print "<p>利用者名:". $registant_inp. "</p>";
-                print "<p>会議室:". $conf_room_inp. "</p>";
-                print "<p>備品:". $equipment_inp. "</p>";
-                print "<p>備品数:". $equipment_num_inp. "</p>";
-                print "<p>予約日:". $date_inp. "</p>";
-                print "<p>予約時間:". $start_inp. "~" . $finish_inp."</p>";
-                print "<p>人数:". $num_of_people_inp. "</p>";
-                print "<p>目的:". $purpose_inp. "</p>";
-                
-                print "<br>";
-
-                print "上記の情報で予約しますか？";
-                print "<form  method=\"post\">\n";
-                print "<input type=\"submit\" formaction=\"index.php\" name=\"ok\" value=\"はい\">\n";
-                print "<input type=\"submit\" formaction=\"reservation.php\"value=\"いいえ\">\n";
-                print "</form>\n";
-            }
-            else
-            {
-                //header("Location: reservation.php");
+                $count_query = $connect -> query("SELECT * FROM reservation");
+                $count = $count_query -> rowCount();
+                $code = $count * 1;
+                $stmt_reservation -> execute();
+                $stmt_conference -> execute();
+                $stmt_equipment -> execute();
+                header("Location: reservation.php");
                 exit();
             }
+            catch(PDOException $e)
+            {
+                exit($e->getMessage());
+            }
+        
+        
+            if(1)/*input_check($registant_inp, 'registrant') and input_check($date_inp, 'date') and
+                    input_check($start_inp, 'start') and input_check($finish_inp, 'finish') and 
+                    input_check($num_of_people_inp, 'num_of_people') and input_check($purpose_inp, 'purpose'))
+                {
+                    $_SESSION['registant'] = $registant_inp;
+                    $_SESSION['date'] = $date_inp;
+                    $_SESSION['start'] = $start_inp;
+                    $_SESSION['finish'] = $finish_inp;
+                    $_SESSION['num_of_people'] = $num_of_people_inp;
+                    $_SESSION['purpose'] = $purpose_inp;
+
+                    print "<br>";
+                    print "<h1></h1>";
+                    print "<p>利用者名:". $registant_inp. "</p>";
+                    print "<p>会議室:". $conf_room_inp. "</p>";
+                    print "<p>備品:". $equipment_inp. "</p>";
+                    print "<p>備品数:". $equipment_num_inp. "</p>";
+                    print "<p>予約日:". $date_inp. "</p>";
+                    print "<p>予約時間:". $start_inp. "~" . $finish_inp."</p>";
+                    print "<p>人数:". $num_of_people_inp. "</p>";
+                    print "<p>目的:". $purpose_inp. "</p>";
+                    
+                    print "<br>";
+
+                    print "上記の情報で予約しますか？";
+                    print "<form  method=\"post\">\n";
+                    print "<input type=\"submit\" formaction=\"index.php\" name=\"ok\" value=\"はい\">\n";
+                    print "<input type=\"submit\" formaction=\"reservation.php\"value=\"いいえ\">\n";
+                    print "</form>\n";
+                }
+                else
+                {
+                    //header("Location: reservation.php");
+                    exit();
+                }
 
     ?>
 </body>
