@@ -41,14 +41,14 @@
         
         $connect = connect_db();
         
+        /*
         $dbh->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true); 
         $row = 'SELECT * FROM reservation ';
         $stmt = $dbh->query($row);
         $stmt->execute();
         $count=$stmt->rowCount();
         echo $count;
-
-        print "<p>利用者名:". $registant_inp. "</p>";
+        */
         
         try
         {
@@ -63,8 +63,6 @@
             exit($e->getMessage());
             //die();
         }
-
-        print "<p>会議室:". $conf_room_inp. "</p>";
         
         
         /*input_check($registant_inp, 'registrant') and input_check($date_inp, 'date') and
@@ -99,7 +97,7 @@
                 print "<input type=\"submit\" formaction=\"reservation.php\"value=\"いいえ\">\n";
                 print "</form>\n";
             }
-
+            
         $connect = null;
     ?>
 </body>
