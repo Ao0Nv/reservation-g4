@@ -53,7 +53,8 @@
         
         try
         {
-            $sql="INSERT INTO reservation VALUES($code, $date_inp, $start_inp, $finish_inp, $registant_inp, $num_of_people_inp, $purpose_inp, 'wait')";
+            $sql="INSERT INTO reservation(code, date, start, finish, registrant, num_of_people, purpose, status)
+                     VALUES($code, $date_inp, $start_inp, $finish_inp, $registant_inp, $num_of_people_inp, $purpose_inp, 'wait')";
             
             $res = $connect->query($sql);
             header("Location: reservation.php");
