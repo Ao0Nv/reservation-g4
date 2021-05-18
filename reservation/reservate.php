@@ -39,21 +39,45 @@
         $num_of_people_inp = $_POST["num_of_people"];
         $purpose_inp = $_POST["purpose"];
         
+        $code = 1;
+
         try
         {
             $connect = connect_db();
         
-            $sql = 'select * from reservation';
-        
+            $connect->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+            $sql = 'INSERT INTO reservation from VALUES(:code, :date_inp, :start_inp, :finish_inp, :redistrant_inp, :num_of_people_inp)';
+
+            $stmt = $connect->prepare($sql);
+
+            try
+            {
+                $stmt -> bindParam(":redistrant_inp", $redistrant_inp);
+                $stmt -> bindParam(":date_inp", $date_inp);
+                $stmt -> bindParam(":start_inp", $start_inp);
+                $stmt -> bindParam(":finish_inp", $finish_inp);
+                $stmt -> bindParam(":num_of_people_inp", $num_of_people_inp);
+                $stmt -> bindParam(":purpose_inp", $purpose_inp);
+
+                $stmt -> execute();
+
+                $connect->commit();
+            }
+            catch (PDOException $e)
+            {
+                $dbh->rollback();
+		        throw $e;
+            }
         }
         catch (PDOException $e)
         {
-            print('Error:'.$e->getMessage());
-            die();
+            exit($e->getMessage());
         }
         
         
-        $dbh = null;
+        $connect = null;
 
 
         /*
@@ -65,16 +89,16 @@
             $stmt_conference_room = $connect->prepare("INSERT INTO conference VALUES(:rsv_conf_room)");
             $stmt_equipment = $connect->prepare("INSERT INTO equipment VALUES(:rsv_equipment, :rsv_equipment_num)");
 
-            $stmt_reservation -> bindParam(":rsv_redistrant", $redistrant_inp, PDO::PARAM_STR);
-            $stmt_reservation -> bindParam(":rsv_date", $date_inp, PDO::PARAM_STR);
-            $stmt_reservation -> bindParam(":rsv_start", $start_inp, PDO::PARAM_STR);
-            $stmt_reservation -> bindParam(":rsv_finish", $finish_inp, PDO::PARAM_STR);
-            $stmt_reservation -> bindParam(":rsv_num_of_people", $num_of_people_inp, PDO::PARAM_INT);
-            $stmt_reservation -> bindParam(":rsv_purpose", $purpose_inp, PDO::PARAM_STR);
+            $stmt -> bindParam(":redistrant_inp", $redistrant_inp);
+            $stmt -> bindParam(":date_inp", $date_inp);
+            $stmt -> bindParam(":start_inp", $start_inp);
+            $stmt -> bindParam(":finish_inp", $finish_inp);
+            $stmt -> bindParam(":num_of_people_inp", $num_of_people_inp);
+            $stmt -> bindParam(":purpose_inp", $purpose_inp);
 
-            $stmt_conference_room -> bindParam(":rsv_conf_room", $conf_room_inp, PDO::PARAM_STR);
-            $stmt_equipment -> bindParam(":rsv_equipment", $equipment_inp, PDO::PARAM_STR);
-            $stmt_equipment -> bindParam(":rsv_equipment_num", $equipment_num_inp, PDO::PARAM_INT);
+            $stmt -> bindParam(":rsv_conf_room", $conf_room_inp, PDO::PARAM_STR);
+            $stmt -> bindParam(":rsv_equipment", $equipment_inp, PDO::PARAM_STR);
+            $stmt -> bindParam(":rsv_equipment_num", $equipment_num_inp, PDO::PARAM_INT);
             
             $stmt_reservation -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $stmt_conference_room ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
