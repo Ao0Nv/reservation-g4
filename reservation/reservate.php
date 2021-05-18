@@ -48,6 +48,7 @@
         $count=$stmt->rowCount();
         echo $count;
 
+        /*
         try
         {
             $sql="INSERT INTO reservation VALUES('$code', '$date_inp', '$start_inp', '$finish_inp', '$registant_inp', '$num_of_people_inp', '$purpose_inp', 'wait')";
@@ -61,7 +62,7 @@
             exit($e->getMessage());
             //die();
         }
-        
+        */
         
         /*input_check($registant_inp, 'registrant') and input_check($date_inp, 'date') and
                 input_check($start_inp, 'start') and input_check($finish_inp, 'finish') and 
