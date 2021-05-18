@@ -44,7 +44,8 @@
         $dbh->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true); 
         $row = 'SELECT * FROM reservation ';
         $query = $dbh->query($row);
-        $query->execute();
+        $all = $stmt->fetchAll();
+        //$query->execute();
         $count=$stmt->rowCount();
         $code = $count + 1;
 
@@ -52,20 +53,21 @@
         {
             $sql="INSERT INTO reservation VALUES('$code', '$date_inp', '$start_inp', '$finish_inp', '$registant_inp', '$num_of_people_inp', '$purpose_inp', 'wait')";
             
-            $res = $dbh->query($sql);
+            $res = $connect->query($sql);
             header("Location: reservation.php");
             exit();
         }
         catch(PDOException $e)
         {
             exit($e->getMessage());
+            die();
         }
         
         
-        if(1)/*input_check($registant_inp, 'registrant') and input_check($date_inp, 'date') and
+        /*input_check($registant_inp, 'registrant') and input_check($date_inp, 'date') and
                 input_check($start_inp, 'start') and input_check($finish_inp, 'finish') and 
                 input_check($num_of_people_inp, 'num_of_people') and input_check($purpose_inp, 'purpose'))*/
-            {
+            
                 $_SESSION['registant'] = $registant_inp;
                 $_SESSION['date'] = $date_inp;
                 $_SESSION['start'] = $start_inp;
@@ -91,13 +93,8 @@
                 print "<input type=\"submit\" formaction=\"index.php\" name=\"ok\" value=\"はい\">\n";
                 print "<input type=\"submit\" formaction=\"reservation.php\"value=\"いいえ\">\n";
                 print "</form>\n";
-            }
-            else
-            {
-                //header("Location: reservation.php");
-                exit();
-            }
 
+        $connect = null;
     ?>
 </body>
 <?php include(dirname(__FILE__). '/include/footer.php'); ?>
