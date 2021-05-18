@@ -43,11 +43,10 @@
         
         $dbh->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true); 
         $row = 'SELECT * FROM reservation ';
-        $query = $dbh->query($row);
-        $all = $stmt->fetchAll();
-        //$query->execute();
+        $stmt = $dbh->query($row);
+        $stmt->execute();
         $count=$stmt->rowCount();
-        $code = $count + 1;
+        echo $count;
 
         try
         {
