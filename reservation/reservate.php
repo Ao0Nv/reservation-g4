@@ -39,6 +39,23 @@
         $num_of_people_inp = $_POST["num_of_people"];
         $purpose_inp = $_POST["purpose"];
         
+        try
+        {
+            $connect = connect_db();
+        
+            $sql = 'select * from reservation';
+        
+        }
+        catch (PDOException $e)
+        {
+            print('Error:'.$e->getMessage());
+            die();
+        }
+        
+        
+        $dbh = null;
+
+
         /*
         if(isset($_POST["ok"]))
         {
@@ -96,13 +113,13 @@
                     print "<br>";
                     print "<h1></h1>";
                     print "<p>利用者名:". $registant_inp. "</p>";
-                    print "<p>会議室:". $conf_room_inp. "</p>";
-                    print "<p>備品:". $equipment_inp. "</p>";
-                    print "<p>備品数:". $equipment_num_inp. "</p>";
-                    print "<p>予約日:". $date_inp. "</p>";
+                    print "<p>会議室　:". $conf_room_inp. "</p>";
+                    print "<p>備品　　:". $equipment_inp. "</p>";
+                    print "<p>備品数　:". $equipment_num_inp. "</p>";
+                    print "<p>予約日　:". $date_inp. "</p>";
                     print "<p>予約時間:". $start_inp. "~" . $finish_inp."</p>";
-                    print "<p>人数:". $num_of_people_inp. "</p>";
-                    print "<p>目的:". $purpose_inp. "</p>";
+                    print "<p>人数　　:". $num_of_people_inp. "</p>";
+                    print "<p>目的　　:". $purpose_inp. "</p>";
                     
                     print "<br>";
 
