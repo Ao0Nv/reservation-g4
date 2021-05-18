@@ -48,7 +48,7 @@
         $count=$stmt->rowCount();
         echo $count;
 
-        /*
+        
         try
         {
             $sql="INSERT INTO reservation VALUES('$code', '$date_inp', '$start_inp', '$finish_inp', '$registant_inp', '$num_of_people_inp', '$purpose_inp', 'wait')";
@@ -62,12 +62,14 @@
             exit($e->getMessage());
             //die();
         }
-        */
+        
         
         /*input_check($registant_inp, 'registrant') and input_check($date_inp, 'date') and
                 input_check($start_inp, 'start') and input_check($finish_inp, 'finish') and 
                 input_check($num_of_people_inp, 'num_of_people') and input_check($purpose_inp, 'purpose'))*/
             
+            if(1)
+            {
                 $_SESSION['registant'] = $registant_inp;
                 $_SESSION['date'] = $date_inp;
                 $_SESSION['start'] = $start_inp;
@@ -93,7 +95,8 @@
                 print "<input type=\"submit\" formaction=\"index.php\" name=\"ok\" value=\"はい\">\n";
                 print "<input type=\"submit\" formaction=\"reservation.php\"value=\"いいえ\">\n";
                 print "</form>\n";
-
+            }
+            
         $connect = null;
     ?>
 </body>
