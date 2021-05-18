@@ -48,8 +48,8 @@
             $code = 1;
 
             $connect = connect_db();
-
-            $sql = 'INSERT INTO reservation(code, date, start, finish, num_of_poeple) VALUES('.$code.', '.$date_inp.', '.$start_inp.', '. $finish_inp.', '. $redistrant_inp.' ,'. $num_of_people_inp.')';
+                                                                                            //'.$code.', '.$date_inp.', '.$start_inp.', '. $finish_inp.', '. $redistrant_inp.' ,'. $num_of_people_inp.'
+            $sql = 'INSERT INTO reservation(code, date, start, finish, num_of_poeple) VALUES('1', '1', '1', '1', '1' ,'1')';
             
             $stmt = $connect->prepare($sql);
             
