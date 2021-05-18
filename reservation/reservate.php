@@ -39,7 +39,6 @@
         $num_of_people_inp = $_POST["num_of_people"];
         $purpose_inp = $_POST["purpose"];
         
-        $connect = connect_db();
         
         /*
         $dbh->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true); 
@@ -51,6 +50,23 @@
         */
         $code=1;
         
+        $connect = connect_db();
+
+        $stmt_reservation = $connect->prepare("INSERT INTO reservation VALUES(:code, :date, :start, :finish, :redistrant, :num_of_people)");
+        $stmt_conference_room = $connect->prepare("INSERT INTO conference VALUES(:conf_room)");
+        $stmt_equipment = $connect->prepare("INSERT INTO equipment VALUES(:equipment, :equipment_num)");
+
+        $stmt_reservation -> bindParam(":redistrant", $redistrant_inp, PDO::PARAM_INT);
+        $stmt_reservation -> bindParam(":date", $date_inp, PDO::PARAM_STR);
+        $stmt_reservation -> bindParam(":start", $start_inp, PDO::PARAM_STR);
+        $stmt_reservation -> bindParam(":finish", $finish_inp, PDO::PARAM_STR);
+        $stmt_reservation -> bindParam(":num_of_people", $num_of_people_inp, PDO::PARAM_INT);
+        $stmt_reservation -> bindParam(":purpose", $purpose_inp, PDO::PARAM_STR);
+
+        $stmt_conference_room -> bindParam(":conf_room", $conf_room_inp, PDO::PARAM_STR);
+        $stmt_equipment -> bindParam(":equipment", $equipment_inp, PDO::PARAM_STR);
+        $stmt_equipment -> bindParam(":equipment_num", $equipment_num_inp, PDO::PARAM_INT);
+
         try
         {
             $sql="INSERT INTO reservation(code, date, start, finish, registrant, num_of_people, purpose, status)
