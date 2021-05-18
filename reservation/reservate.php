@@ -39,55 +39,29 @@
         $num_of_people_inp = $_POST["num_of_people"];
         $purpose_inp = $_POST["purpose"];
         
-        
-        /*
-        $dbh->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true); 
-        $row = 'SELECT * FROM reservation ';
-        $stmt = $dbh->query($row);
-        $stmt->execute();
-        $count=$stmt->rowCount();
-        echo $count;
-        */
-        $code=1;
-        
         $connect = connect_db();
-
-        $stmt_reservation = $connect->prepare("INSERT INTO reservation VALUES(:code, :date, :start, :finish, :redistrant, :num_of_people)");
-        $stmt_conference_room = $connect->prepare("INSERT INTO conference VALUES(:conf_room)");
-        $stmt_equipment = $connect->prepare("INSERT INTO equipment VALUES(:equipment, :equipment_num)");
-
-        $stmt_reservation -> bindParam(":redistrant", $redistrant_inp, PDO::PARAM_INT);
-        $stmt_reservation -> bindParam(":date", $date_inp, PDO::PARAM_STR);
-        $stmt_reservation -> bindParam(":start", $start_inp, PDO::PARAM_STR);
-        $stmt_reservation -> bindParam(":finish", $finish_inp, PDO::PARAM_STR);
-        $stmt_reservation -> bindParam(":num_of_people", $num_of_people_inp, PDO::PARAM_INT);
-        $stmt_reservation -> bindParam(":purpose", $purpose_inp, PDO::PARAM_STR);
-
-        $stmt_conference_room -> bindParam(":conf_room", $conf_room_inp, PDO::PARAM_STR);
-        $stmt_equipment -> bindParam(":equipment", $equipment_inp, PDO::PARAM_STR);
-        $stmt_equipment -> bindParam(":equipment_num", $equipment_num_inp, PDO::PARAM_INT);
-
+        
+            
         try
         {
-            $sql="INSERT INTO reservation(code, date, start, finish, registrant, num_of_people, purpose, status)
-                     VALUES($code, $date_inp, $start_inp, $finish_inp, $registant_inp, $num_of_people_inp, $purpose_inp, 'wait')";
-            
-            $res = $connect->query($sql);
+            $count_query = $connect -> query("SELECT * FROM reservation");
+            $count = $count_query -> rowCount();
+            $code = $count * 1;
+            $stmt_reservation -> execute();
+            $stmt_conference -> execute();
+            $stmt_equipment -> execute();
             header("Location: reservation.php");
-            //exit();
+            exit();
         }
         catch(PDOException $e)
         {
             exit($e->getMessage());
-            //die();
         }
         
         
-        /*input_check($registant_inp, 'registrant') and input_check($date_inp, 'date') and
+        if(1)/*input_check($registant_inp, 'registrant') and input_check($date_inp, 'date') and
                 input_check($start_inp, 'start') and input_check($finish_inp, 'finish') and 
                 input_check($num_of_people_inp, 'num_of_people') and input_check($purpose_inp, 'purpose'))*/
-            
-            if(1)
             {
                 $_SESSION['registant'] = $registant_inp;
                 $_SESSION['date'] = $date_inp;
@@ -115,8 +89,12 @@
                 print "<input type=\"submit\" formaction=\"reservation.php\"value=\"いいえ\">\n";
                 print "</form>\n";
             }
-            
-        $connect = null;
+            else
+            {
+                //header("Location: reservation.php");
+                exit();
+            }
+
     ?>
 </body>
 <?php include(dirname(__FILE__). '/include/footer.php'); ?>
