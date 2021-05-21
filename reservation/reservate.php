@@ -58,25 +58,24 @@
             $finish_inp = $_SESSION['finish'];
             $num_of_people_inp = $_SESSION['num_of_people'];
             $purpose_inp = $_SESSION['purpose'];
-            $status_inp = "wait";
-        
-            $code = 1;
+            $status = "wait";
+            $code = 0;
 
             $connect = connect_db();
 
-            $sql = "INSERT INTO reservation VALUES(:code_rsv, :date_rsv, :start_rsv, :finish_rsv, :redistrant_rsv, :num_of_people_rsv, :purpose_rsv, :status_rsv)";
+            //$sql = "INSERT INTO reservation VALUES(:code, :date, :start, :finish, :redistrant, :num_of_people, :purpose, :status)";
             
-            $stmt = $connect->prepare($sql);
+            $stmt = $connect->prepare("INSERT INTO reservation VALUES(:code, :date, :start, :finish, :redistrant, :num_of_people, :purpose, :status)");
             
             
-            $stmt -> bindParam(":code_rsv", $code);
-            $stmt -> bindParam(":date_rsv", $date_inp);
-            $stmt -> bindParam(":start_rsv", $start_inp);
-            $stmt -> bindParam(":finish_rsv", $finish_inp);
-            $stmt -> bindParam(":redistrant_rsv", $redistrant_inp);
-            $stmt -> bindParam(":num_of_people_rsv", $num_of_people_inp);
-            $stmt -> bindParam(":purpose_rsv", $purpose_inp);
-            $stmt -> bindParam(":status", $status_inp);
+            $stmt -> bindParam(":code", $code);
+            $stmt -> bindParam(":date", $date_inp);
+            $stmt -> bindParam(":start", $start_inp);
+            $stmt -> bindParam(":finish", $finish_inp);
+            $stmt -> bindParam(":redistrant", $redistrant_inp);
+            $stmt -> bindParam(":num_of_people", $num_of_people_inp);
+            $stmt -> bindParam(":purpose", $purpose_inp);
+            $stmt -> bindParam(":status", $status);
             
 
             $stmt->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -102,10 +101,10 @@
         }
         else
         {
-            if(input_check_b($registant_inp, 'registrant') and input_check_b($date_inp, 'date') and
+            if(1/*input_check_b($registant_inp, 'registrant') and input_check_b($date_inp, 'date') and
                     input_check_b($start_inp, 'start') and input_check_b($finish_inp, 'finish') and 
                     input_check_b($num_of_people_inp, 'num_of_people') and input_check_b($purpose_inp, 'purpose') and
-                    input_check_b($status_inp, 'status'))
+                    input_check_b($status_inp, 'status')*/)
             {
                 $_SESSION['registant'] = $registant_inp;
                 $_SESSION['date'] = $date_inp;
