@@ -116,7 +116,7 @@
 
 
         <input type="hidden" name="count" id="count_id" value="0">
-        <table width="100%" cellpadding="3" cellspacing="1" id="table">
+        <table width="50%" cellpadding="3" cellspacing="1" id="table">
             <tbody>
                 <tr>
                     <td>備品</td>
