@@ -35,15 +35,15 @@
 
         if(isset($_POST["ok"]))
         {
-            $registant_inp = $_POST['registant'];
-            $conf_room_inp = $_POST['conf_room'];
-            $equipment_inp = $_POST['equipment'];
-            $equipment_num_inp = $_POST['equipment_num'];
-            $date_inp = $_POST['date'];
-            $start_inp = $_POST['start'];
-            $finish_inp = $_POST['finish'];
-            $num_of_people_inp = $_POST['num_of_people'];
-            $purpose_inp = $_POST['purpose'];
+            $registant_inp = $_SESSION['registant'];
+            $conf_room_inp = $_SESSION['conf_room'];
+            $equipment_inp = $_SESSION['equipment'];
+            $equipment_num_inp = $_SESSION['equipment_num'];
+            $date_inp = $_SESSION['date'];
+            $start_inp = $_SESSION['start'];
+            $finish_inp = $_SESSION['finish'];
+            $num_of_people_inp = $_SESSION['num_of_people'];
+            $purpose_inp = $_SESSION['purpose'];
         
             $code = 1;
 
@@ -101,14 +101,14 @@
 
                 print "<br>";
                 print "<h1></h1>";
-                print "<p>利用者名:". $_POST['registant']. "</p>";
-                print "<p>会議室　:". $_POST['conf_room']. "</p>";
-                print "<p>備品　　:". $_POST['equipment']. "</p>";
-                print "<p>備品数　:". $_POST['equipment_num']. "</p>";
-                print "<p>予約日　:". $_POST['date']. "</p>";
-                print "<p>予約時間:". $_POST['start']. "~" . $_POST['finish']."</p>";
-                print "<p>人数　　:". $_POST['num_of_people']. "</p>";
-                print "<p>目的　　:". $_POST['purpose']. "</p>";
+                print "<p>利用者名:". $_SESSION['registant']. "</p>";
+                print "<p>会議室　:". $_SESSION['conf_room']. "</p>";
+                print "<p>備品　　:". $_SESSION['equipment']. "</p>";
+                print "<p>備品数　:". $_SESSION['equipment_num']. "</p>";
+                print "<p>予約日　:". $_SESSION['date']. "</p>";
+                print "<p>予約時間:". $_SESSION['start']. "~" . $_POST['finish']."</p>";
+                print "<p>人数　　:". $_SESSION['num_of_people']. "</p>";
+                print "<p>目的　　:". $_SESSION['purpose']. "</p>";
 
                 print "<br>";
 
