@@ -110,6 +110,7 @@
               <td ><button id="add" type="button">+</button></td>
             </tr>
           </tfoot>
+        </table>
         <input type="submit" value="予約確定">
     </form>
     <br><br>
