@@ -142,7 +142,7 @@
         {
           var tr_form = '' +
           '<tr>' +
-          '<td><input type="text" name="equipment"></td>' +
+          '<td><select name="equipment"></td>' +
           '<td><input type="text" name="equipment_num"></td>' +
           '</tr>';
           $(tr_form).appendTo($('table > tbody'));
