@@ -10,6 +10,20 @@
     <?php
         require_once('include/db_connect.php');
         session_start();
+
+        function input_check_b(&$input, $key)
+        {
+            if(isset($_POST[$key]))
+            {
+                $input = preg_replace('/[^()ぁ-んァ-ヶｦ-ﾟ一-龠０-９a-zA-Z0-9\-]/', '', $_POST[$key]); 
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     ?>
 </head>
 <?php include(dirname(__FILE__). '/include/header.php'); ?>
@@ -88,10 +102,10 @@
         }
         else
         {
-            if(input_check($registant_inp, 'registrant') and input_check($date_inp, 'date') and
-                    input_check($start_inp, 'start') and input_check($finish_inp, 'finish') and 
-                    input_check($num_of_people_inp, 'num_of_people') and input_check($purpose_inp, 'purpose') and
-                    input_check($status_inp, 'status'))
+            if(input_check_b($registant_inp, 'registrant') and input_check_b($date_inp, 'date') and
+                    input_check_b($start_inp, 'start') and input_check_b($finish_inp, 'finish') and 
+                    input_check_b($num_of_people_inp, 'num_of_people') and input_check_b($purpose_inp, 'purpose') and
+                    input_check_b($status_inp, 'status'))
             {
                 $_SESSION['registant'] = $registant_inp;
                 $_SESSION['date'] = $date_inp;
