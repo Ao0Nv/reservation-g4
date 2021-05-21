@@ -140,12 +140,13 @@
       {
         $('button#add').click(function()
         {
-        var tr_form = '' +
-        '<tr>' +
-        '<td><input type="text" name="equipment"></td>' +
-        '<td><input type="text" name="equipment_num"></td>' +
-        '</tr>';
-        $(tr_form).appendTo($('table > tbody'));
+          var tr_form = '' +
+          '<tr>' +
+          '<td><input type="text" name="equipment"></td>' +
+          '<td><input type="text" name="equipment_num"></td>' +
+          '</tr>';
+          $(tr_form).appendTo($('table > tbody'));
+        });
       });
     </script>
   </main>
