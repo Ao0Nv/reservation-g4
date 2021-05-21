@@ -37,7 +37,6 @@
             <option value='セミナー室'>セミナー室</option>
             <option value='大会議室'>大会議室</option>
         </select> 
-        <br><br>
         <!--
         <lavel for="equipment">備品　　 </lavel>
         <select name='equipment'>
@@ -107,13 +106,13 @@
           </tbody>
           <tfoot>
             <tr>
-              <td ><button id="add" type="button">+</button></td>
+              <td ><button id="add" type="button"> + </button></td>
             </tr>
           </tfoot>
         </table>
+        <br><br>
         <input type="submit" value="予約確定">
     </form>
-    <br><br>
     <script type="text/javascript">
       function userflg0(ischecked)
       {
@@ -137,7 +136,7 @@
           document.getElementById("user").disabled = false;
         }
       }
-      function() 
+      $(function() 
       {
         $('button#add').click(function()
         {
@@ -147,7 +146,7 @@
         '<td><input type="text" name="equipment_num"></td>' +
         '</tr>';
         $(tr_form).appendTo($('table > tbody'));
-      }
+      });
     </script>
   </main>
   <?php include(dirname(__FILE__). '/include/footer.php'); ?>
