@@ -75,7 +75,7 @@
                 
                 $stmt -> execute();
 
-                header("Location: reservation.php");
+                //header("Location: reservation.php");
                 exit();
                 
             }
