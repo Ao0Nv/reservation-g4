@@ -44,12 +44,13 @@
             $finish_inp = $_SESSION['finish'];
             $num_of_people_inp = $_SESSION['num_of_people'];
             $purpose_inp = $_SESSION['purpose'];
+            $status_inp = "wait";
         
             $code = 1;
 
             $connect = connect_db();
 
-            $sql = "INSERT INTO reservation VALUES(:code_rsv, :date_rsv, :start_rsv, :finish_rsv, :redistrant_rsv, :num_of_people_rsv, :purpose_rsv)";
+            $sql = "INSERT INTO reservation VALUES(:code_rsv, :date_rsv, :start_rsv, :finish_rsv, :redistrant_rsv, :num_of_people_rsv, :purpose_rsv, :status_rsv)";
             
             $stmt = $connect->prepare($sql);
             
@@ -61,12 +62,12 @@
             $stmt -> bindParam(":redistrant_rsv", $redistrant_inp);
             $stmt -> bindParam(":num_of_people_rsv", $num_of_people_inp);
             $stmt -> bindParam(":purpose_rsv", $purpose_inp);
+            $stmt -> bindParam(":status", $status_inp);
             
 
-            //$stmt->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $stmt->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
-            
-
+        
             try
             {
                 $count_query = $connect -> query("SELECT * FROM reservation");
@@ -75,7 +76,7 @@
                 
                 $stmt -> execute();
 
-                //header("Location: reservation.php");
+                header("Location: reservation.php");
                 exit();
                 
             }
@@ -89,7 +90,8 @@
         {
             if(input_check($registant_inp, 'registrant') and input_check($date_inp, 'date') and
                     input_check($start_inp, 'start') and input_check($finish_inp, 'finish') and 
-                    input_check($num_of_people_inp, 'num_of_people') and input_check($purpose_inp, 'purpose'))
+                    input_check($num_of_people_inp, 'num_of_people') and input_check($purpose_inp, 'purpose') and
+                    input_check($status_inp, 'status'))
             {
                 $_SESSION['registant'] = $registant_inp;
                 $_SESSION['date'] = $date_inp;
@@ -97,6 +99,7 @@
                 $_SESSION['finish'] = $finish_inp;
                 $_SESSION['num_of_people'] = $num_of_people_inp;
                 $_SESSION['purpose'] = $purpose_inp;
+                $_SESSION['status'] = $status_inp;
             
 
                 print "<br>";
