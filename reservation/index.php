@@ -11,6 +11,7 @@
 <?php include(dirname(__FILE__).'/include/header.php'); ?>
 <main>
     <button type=“button” onclick="location.href='reservation.php'">予約へ</button>
+    <button type=“button” onclick="location.href='table.php'">テーブル確認</button>
 </main>
 <?php include(dirname(__FILE__).'/include/footer.php'); ?>
 </html>
