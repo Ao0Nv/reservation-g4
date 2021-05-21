@@ -30,7 +30,7 @@
 <main>
     <h2>予約情報確認ページ</h2>
     <?php
-
+        session_start();
         $registant_inp = "";
         $date_inp = "";
         $start_inp = "";
