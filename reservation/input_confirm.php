@@ -119,9 +119,9 @@
         <table width="50%" cellpadding="3" cellspacing="1" id="table">
             <tbody>
                 <tr>
-                    <td width="8%">　　</td>
-                    <td width="46%">備品</td>
-                    <td width="46%">備品数</td>
+                    <td width="10%">　　</td>
+                    <td width="45%">備品</td>
+                    <td width="45%">備品数</td>
                 </tr>
                 <tr>
                     <td><input type="button" value="追加" onclick="insertTable ()"></td>
