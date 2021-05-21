@@ -68,14 +68,14 @@
             $stmt = $connect->prepare("INSERT INTO reservation VALUES(:code, :date, :start, :finish, :redistrant, :num_of_people, :purpose, :status)");
             
             
-            $stmt -> bindParam(":code", $code);
-            $stmt -> bindParam(":date", $date_inp);
-            $stmt -> bindParam(":start", $start_inp);
-            $stmt -> bindParam(":finish", $finish_inp);
-            $stmt -> bindParam(":redistrant", $redistrant_inp);
-            $stmt -> bindParam(":num_of_people", $num_of_people_inp);
-            $stmt -> bindParam(":purpose", $purpose_inp);
-            $stmt -> bindParam(":status", $status);
+            $stmt -> bindParam(":code", $code, PDO::PARAM_STR);
+            $stmt -> bindParam(":date", $date_inp, PDO::PARAM_STR);
+            $stmt -> bindParam(":start", $start_inp, PDO::PARAM_STR);
+            $stmt -> bindParam(":finish", $finish_inp, PDO::PARAM_STR);
+            $stmt -> bindParam(":redistrant", $redistrant_inp, PDO::PARAM_STR);
+            $stmt -> bindParam(":num_of_people", $num_of_people_inp, PDO::PARAM_INT);
+            $stmt -> bindParam(":purpose", $purpose_inp, PDO::PARAM_STR);
+            $stmt -> bindParam(":status", $status, PDO::PARAM_STR);
             
 
             $stmt->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
