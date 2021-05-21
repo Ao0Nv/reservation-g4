@@ -80,7 +80,7 @@
         <br><br>
         <lavel for="purpose">目的 　 </lavel>
         <input type="text" name="purpose" size="100">
-        <br><br>
+        <br>
         <table>
           <thead>
             <tr>
@@ -110,7 +110,7 @@
             </tr>
           </tfoot>
         </table>
-        <br><br>
+        <br>
         <input type="submit" value="予約確定">
     </form>
     <script type="text/javascript">
