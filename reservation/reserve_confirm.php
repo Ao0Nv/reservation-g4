@@ -48,8 +48,8 @@
             $equipment_inp = $_SESSION['equipment'];
             $equipment_num_inp = $_SESSION['equipment_num'];
             //$date_inp = $_SESSION['date'];
-            $start_inp = $_SESSION['start'];
-            $finish_inp = $_SESSION['finish'];
+            //$start_inp = $_SESSION['start'];
+            //$finish_inp = $_SESSION['finish'];
             $num_of_people_inp = $_SESSION['num_of_people'];
             $purpose_inp = $_SESSION['purpose'];
             $status = "wait";
@@ -63,18 +63,29 @@
             
             $stmt -> bindParam(":code", $code, PDO::PARAM_STR);
 
-            //date
+            //date------------------------------------------------------
             $date_inp = new Date('2021-05-22');
             $stmt->bindValue(':date', $date->format('Y-m-d'), PDO::PARAM_STR);
 
-            $created_at = new Date();
-            $stmt->bindValue(':date', $created_at->format('Y-m-d H:i:s'), PDO::PARAM_STR);
+            //$created_at = new Date();
+                $created_date = $_SESSION['date']
+            $stmt->bindValue(':date', $created_date->format('Y-m-d H:i:s'), PDO::PARAM_STR);
 
-            //time
-            $stmt -> bindParam(":start", $start_inp, PDO::PARAM_STR);
-            $stmt -> bindParam(":finish", $finish_inp, PDO::PARAM_STR);
+            //time-------------------------------------------------------
+            $start_inp = new Time('12:00');
+            $finish_inp = new Time('12:00');
+            $stmt -> bindParam(":start", $start_inp->format('hh:mm'), PDO::PARAM_STR);
+            $stmt -> bindParam(":finish", $finish_inp->format('hh:mm'), PDO::PARAM_STR);
 
-            
+                $created_start = $_SESSION['start'];
+                $created_finish = $_SESSION['finish'];
+
+            $stmt -> bindParam(":start", $created_start->format('hh:mm'), PDO::PARAM_STR);
+            $stmt -> bindParam(":finish", $created_finish->format('hh:mm'), PDO::PARAM_STR);
+            //-----------------------------------------------------------
+
+
+
             $stmt -> bindParam(":redistrant", $redistrant_inp, PDO::PARAM_STR);
             $stmt -> bindParam(":num_of_people", $num_of_people_inp, PDO::PARAM_INT);
             $stmt -> bindParam(":purpose", $purpose_inp, PDO::PARAM_STR);
