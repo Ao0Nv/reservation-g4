@@ -102,10 +102,10 @@
         }
         else
         {
-            if(input_check_b($registant_inp, 'registrant') and input_check_b($date_inp, 'date') and
+            if(1/*input_check_b($registant_inp, 'registrant') and input_check_b($date_inp, 'date') and
                     input_check_b($start_inp, 'start') and input_check_b($finish_inp, 'finish') and 
                     input_check_b($num_of_people_inp, 'num_of_people') and input_check_b($purpose_inp, 'purpose') and
-                    input_check_b($status_inp, 'status'))
+                    input_check_b($status_inp, 'status')*/)
             {
                 $_SESSION['registant'] = $registant_inp;
                 $_SESSION['date'] = $date_inp;
