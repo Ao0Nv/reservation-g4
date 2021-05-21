@@ -119,11 +119,12 @@
         <table width="50%" cellpadding="3" cellspacing="1" id="table">
             <tbody>
                 <tr>
-                    <td>備品</td>
-                    <td>備品数</td>
+                    <td width="8%"><td>
+                    <td width="23%">備品</td>
+                    <td width="23%">備品数</td>
                 </tr>
                 <tr>
-                    <td><input type="button" value="入力欄追加" onclick="insertTable ()"></td>
+                    <td><input type="button" value="追加" onclick="insertTable ()"></td>
                 </tr>
                 <tr>
                     <td><input type='button' value='削除' onclick='deleteTable (getSort(this.parentNode.parentNode));'></td>
