@@ -63,7 +63,7 @@
             $stmt -> bindParam(":purpose_rsv", $purpose_inp);
             
 
-            $stmt->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            //$stmt->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
             
 
@@ -114,7 +114,7 @@
 
                 print "上記の情報で予約しますか？";
                 print "<form  method=\"post\">\n";
-                print "<input type=\"submit\" formaction=\"index.php\" name=\"ok\" value=\"はい\">\n";
+                print "<input type=\"submit\" formaction=\"reservate.php\" name=\"ok\" value=\"はい\">\n";
                 print "<input type=\"submit\" formaction=\"reservation.php\"value=\"いいえ\">\n";
                 print "</form>\n";
             }
