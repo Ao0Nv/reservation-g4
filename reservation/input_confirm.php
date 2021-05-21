@@ -80,7 +80,7 @@
         <br><br>
         <lavel for="purpose">目的 　 </lavel>
         <input type="text" name="purpose" size="100">
-        <br>
+        <br><br>
         <!--
         <table>
           <thead>
@@ -120,8 +120,8 @@
             <tbody>
                 <tr>
                     <td width="8%"><td>
-                    <td width="23%">備品</td>
-                    <td width="23%">備品数</td>
+                    <td width="10%">備品</td>
+                    <td width="10%">備品数</td>
                 </tr>
                 <tr>
                     <td><input type="button" value="追加" onclick="insertTable ()"></td>
