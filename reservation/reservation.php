@@ -13,7 +13,7 @@
 
 </head>
 <?php include(dirname(__FILE__). '/include/header.php'); ?>
-<body>
+<main>
     <h2>予約</h2>
     <br>
     <form action = "reservate.php" method = "post">
@@ -107,7 +107,7 @@
         }
       }
     </script>
-  </body>
+  </main>
   <?php include(dirname(__FILE__). '/include/footer.php'); ?>
 
 </html>

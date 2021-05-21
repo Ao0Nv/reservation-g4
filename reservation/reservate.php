@@ -13,7 +13,7 @@
     ?>
 </head>
 <?php include(dirname(__FILE__). '/include/header.php'); ?>
-<body>
+<main>
     <h2>予約情報確認ページ</h2>
     <?php
 
@@ -125,6 +125,6 @@
         }
         $connect = null;
     ?>
-</body>
+</main>
 <?php include(dirname(__FILE__). '/include/footer.php'); ?>
 </html>

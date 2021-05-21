@@ -9,8 +9,8 @@
     <title>会議室・備品予約システム</title>
 </head>
 <?php include(dirname(__FILE__).'/include/header.php'); ?>
-<body>
+<main>
     <button type=“button” onclick="location.href='reservation.php'">予約へ</button>
-</body>
+</main>
 <?php include(dirname(__FILE__).'/include/footer.php'); ?>
 </html>
