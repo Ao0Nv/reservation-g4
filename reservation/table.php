@@ -16,7 +16,7 @@
 </head>
 <?php include(dirname(__FILE__).'/include/header.php'); ?>
 <main>
-    <h2>予約情報確認ページ</h2>
+    <h2>予約テーブルページ</h2>
     <?php
         $connect = connect_db();
         $result = pg_query($conn, "SELECT * FROM reservation");

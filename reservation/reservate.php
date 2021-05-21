@@ -49,15 +49,16 @@
 
             $connect = connect_db();
 
-            $sql = 'INSERT INTO reservation VALUES('.$code_rsv.',' .$date.',' .$start.',' .$finish.',' .$redistrant.',' .$num_of_people.',' .$purpose.')';
+            $sql = 'INSERT INTO reservation VALUES(:code, :date, :start, :finish, :redistrant, :num_of_people, :purpose)';
             
             $stmt = $connect->prepare($sql);
             
-            $stmt -> bindParam(":redistrant", $redistrant_inp);
-            $stmt -> bindParam(":redistrant", $redistrant_inp);
+            
+            $stmt -> bindParam(":code", $code);
             $stmt -> bindParam(":date", $date_inp);
             $stmt -> bindParam(":start", $start_inp);
             $stmt -> bindParam(":finish", $finish_inp);
+            $stmt -> bindParam(":redistrant", $redistrant_inp);
             $stmt -> bindParam(":num_of_people", $num_of_people_inp);
             $stmt -> bindParam(":purpose", $purpose_inp);
             

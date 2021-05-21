@@ -1,5 +1,6 @@
 <?php
-    function connect_db(){
+    function connect_db()
+    {
         $server = "ec2-54-90-13-87.compute-1.amazonaws.com";
         $database = "d1gsgcv5rqsvoc";
         $port_number = 5432;
@@ -22,7 +23,8 @@
             }
             return true;
         }
-        else{
+        else
+        {
             return false;
         }
     }
