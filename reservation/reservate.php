@@ -101,10 +101,10 @@
         }
         else
         {
-            if(input_check($registant_inp, 'registrant') and input_check($date_inp, 'date') and
+            if(input_check($registant_inp, 'registrant') /*and input_check($date_inp, 'date') and
                     input_check($start_inp, 'start') and input_check($finish_inp, 'finish') and 
                     input_check($num_of_people_inp, 'num_of_people') and input_check($purpose_inp, 'purpose') and
-                    input_check($status_inp, 'status'))
+                    input_check($status_inp, 'status')*/)
             {
                 $_SESSION['registant'] = $registant_inp;
                 $_SESSION['date'] = $date_inp;
