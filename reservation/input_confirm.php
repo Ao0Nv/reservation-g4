@@ -120,8 +120,8 @@
             <tbody>
                 <tr>
                     <td width="8%"><td>
-                    <td width="10%">備品</td>
-                    <td width="10%">備品数</td>
+                    <td width="40%">備品</td>
+                    <td width="40%">備品数</td>
                 </tr>
                 <tr>
                     <td><input type="button" value="追加" onclick="insertTable ()"></td>
