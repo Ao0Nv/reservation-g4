@@ -119,8 +119,8 @@
         <table width="100%" cellpadding="3" cellspacing="1" id="table">
             <tbody>
                 <tr>
-                    <th>備品</th>
-                    <th>備品数</th>
+                    <td>備品</td>
+                    <td>備品数</td>
                 </tr>
                 <tr>
                     <td><input type="button" value="入力欄追加" onclick="insertTable ()"></td>
@@ -141,12 +141,10 @@
                         </select>
                     </td>
                     <td><input type='text' value="" name='equipment_num'></td>
-                    <td><input type='text' value="" name='params3_'></td>
-                    <td><input type='text' value="" name='params4_'></td>
                 </tr>
             </tbody>
     </table>
-<input type="button" value="実行" onclick="setParamsName (); submit ();" />
+
 
 
 
@@ -155,7 +153,7 @@
 
 
         <br>
-        <input type="submit" value="予約確定">
+        <input type="submit" value="予約確定" onclick="setParamsName (); submit ();">
     </form>
     <script type="text/javascript">
       function userflg0(ischecked)
@@ -231,8 +229,6 @@ function insertTable ()
                     + "<option value='巻コード'>巻コード</option>"
                     + "</select>";
     cell2.innerHTML = "<input type='text' value='' name = 'equipment_num' > ";
-    cell3.innerHTML = "<input type='text' value='' name = 'params3_' > ";
-    cell4.innerHTML = "<input type='text' value='' name = 'params4_' > ";
 }
 /**
 * 入力欄削除
