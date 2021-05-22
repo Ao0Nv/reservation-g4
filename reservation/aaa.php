@@ -10,12 +10,14 @@
     	$connect = new PDO($dsn, $user, $password);     //最初これ必要
 
         ///////////////////////////////////////////////////////////////////////////////////////////
-        $sql = "SELECT * FROM reservation";    //SQL文
+        $sql = "INSERT INTO reservation VALUES('2','2021-5-29','9:20','11:30','bbbbbb','10','親睦会','wait')";    //SQL文
         $result = $connect->query($sql);                  //sql実行?
         $datas = $result->fetchAll();                     //データベースを$datasに格納
         /////////////////////////////////////////////////////////////////////////////////////////////
 
         $datacount_row = count($datas);                   //$datasの行数を$datacount_rowに格納
+
+        echo($datacount_row);
 
         $connect = null;                                //最後これ必要
      } catch(PDOException $e) {
