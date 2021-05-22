@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-XSS-Protection" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial -scale=1.0">
     <link rel="stylesheet" type="text/css" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/footer.css">
@@ -91,7 +91,9 @@
         <br>
         <input type="button" value="予約確定" onclick="setParamsName (); submit ();"/>
     </form>
+    
     <script>
+    /*
       function userflg0(ischecked)
       {
         if(ischecked == true)
@@ -138,7 +140,7 @@
           cell2.innerHTML = "<input type='text' value='' name = 'equipment_num' > ";
       }
 
-      /*
+      
       function deleteTable (row) 
       {
           document.getElementById ("table").deleteRow (row);
