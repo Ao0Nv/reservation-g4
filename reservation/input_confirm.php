@@ -147,7 +147,8 @@
       {
           var nodeLists = document.getElementById ("table").childNodes[1].childNodes;
           var trCount = - 1;
-          for (var i = 0; i < nodeLists.length; i++) {
+          for (var i = 0; i < nodeLists.length; i++) 
+          {
               var node = nodeLists.item (i);
               if (node.tagName == "TR") 
               {
@@ -161,6 +162,7 @@
           return 0;
       }
       
+      /*
       function setParamsName () 
       {
           var nodeLists = document.getElementById ("table").childNodes[1].childNodes;
@@ -200,6 +202,7 @@
           }
           document.getElementById ("count_id").value = cnt;
       }
+      */
     </script>
   </main>
   <?php include(dirname(__FILE__). '/include/footer.php'); ?>
