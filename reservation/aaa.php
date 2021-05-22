@@ -1,6 +1,6 @@
 <?php
 //データベース用の変数
-    $dsn = 'ec2-52-0-114-209.compute-1.amazonaws.com;
+    $dsn = 'pgsql:host=ec2-52-0-114-209.compute-1.amazonaws.com;
             dbname=daqf6kt1g4926a;
             port=5432';
     $user = 'fixkfmqbxlymrn';
