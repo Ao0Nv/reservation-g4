@@ -11,9 +11,9 @@
 
         $code = "3";
         ///////////////////////////////////////////////////////////////////////////////////////////
-        $sql = "INSERT INTO reservation VALUES('$code','2021-5-28','9:00','12:00','cccccc','15','説明会','wait')";    //SQL文
-        $result = $connect->query($sql);                  //sql実行?
-        $datas = $result->fetchAll();                     //データベースを$datasに格納
+        $sql = "INSERT INTO reservation VALUES('$code''$date', '$start', '$finish', '$registant', '$num_of_people','$purpose', '$status')";    //SQL文
+         = $connect->query($sql);                  //sql実行?
+        $datas = $result->fetchAll();   $result                  //データベースを$datasに格納
         /////////////////////////////////////////////////////////////////////////////////////////////
 
         $datacount_row = count($datas);                   //$datasの行数を$datacount_rowに格納

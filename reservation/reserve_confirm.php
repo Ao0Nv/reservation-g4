@@ -18,6 +18,12 @@
 
     <?php
         
+        $dsn = 'pgsql:host=ec2-52-0-114-209.compute-1.amazonaws.com;
+                dbname=daqf6kt1g4926a;
+                port=5432';
+        $user = 'fixkfmqbxlymrn';
+        $password = '266fc304db7de88db3a21a36a8fb058bfbdb517cc1260a524760560cfc5d771b';
+
         $registant = "";
         $date = "";
         $start = "";
@@ -51,27 +57,45 @@
 
         try
         {
-            $connect = connect_db();
+            $connect = new PDO($dsn, $user, $password);
 
-            //reserve
-            $count_query = $connect -> query("SELECT * FROM reservation");
-            $count_r = $count_query -> rowCount();
-            $code = $count_r * 1;
+            //code
+            $result_code = $connect->query("SELECT * FROM reservation");                  
+            $data_code = $result_code->fetchAll();
 
-            $sql_r = "INSERT INTO reservation(code) VALUES('$code', '$date', '$start', '$finish', '$registant', '$num_of_people','$purpose', '$status')";
+            $datacount_code = count($data_code);
+            $code = $datacount_code;
+
+            //reservation_table 
+            $sql_r = "INSERT INTO reservation VALUES('$code', '$date', '$start', '$finish', '$registant', '$num_of_people','$purpose', '$status')";
+            $result_r = $connect->query($sql_r);                  
+            $data_r = $result_r->fetchAll();  
+            $datacount_r = count($data_r);
+
+            //equipment_table
             $sql_e = "UPDATE equipment SET equipment.code = $code WHERE equipment.name=$equipment";
+            $result_e = $connect->query($sql_e);                  
+            $data_e = $result_e->fetchAll();  
+            $datacount_e = count($data_e);
+
             $sql_c = "UPDATE conferece_room SET conferece_room.code = $code WHERE conferece_room.name=$conf_room";
-            $stmt_r = $connect->prepare($sql_r);
-            $stmt_e = $connect->prepare($sql_e);
-            $stmt_c = $connect->prepare($sql_c);
+            $result_c = $connect->query($sql_c);                  
+            $data_c = $result_c->fetchAll();  
+            $datacount_c = count($data_c);
+
+            $connect = null; 
         }
         catch(PDOException $e) 
         {
             echo $e->getMessage();
         }
 
-        $sql_max = "SELECT max FROM conferece WHERE conferece_room.name=$conf_room";
-        $num_of_max = $connect->prepare($sql_max);
+        //conference_max
+        $sql_max = "SELECT max FROM conferece WHERE conferece_room.name = $conf_room";
+        $result_max = $connect->query($sql_max);                  
+        $data_max = $result_max->fetchAll();  
+
+        $num_of_max = $data_max;
 
         if($num_of_people>$num_of_max)
         {
@@ -97,7 +121,6 @@
 
         print "<button type=“button” onclick="."location.href='index.php'".">戻る</button>";
                     
-        $connect = null;
     ?>
 </main>
 <?php include(dirname(__FILE__). '/include/footer.php'); ?>
