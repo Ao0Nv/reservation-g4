@@ -51,8 +51,8 @@
         $equipment_num = array_fill (0, $count_p, "");
         for ($i = 0; $i < $count_p; $i++) 
         {
-            $equipment     [$i] = $_POST ['equipment' . $i];
-            $equipment_num [$i] = $_POST ['equipment_num' . $i];
+            $equipment     [$i] = $_POST ['$equipment' . $i];
+            $equipment_num [$i] = $_POST ['$equipment_num' . $i];
         }
 
         try
@@ -78,7 +78,7 @@
                 $sql_e[$i] = "UPDATE equipment SET equipment.code = $code WHERE equipment.name=$equipment[$i]";
                 $result_e[$i] = $connect->query($sql_e[$i]);                  
                 $data_e[$i] = $result_e->fetchAll();  
-                $datacount_e[$i] = count($data_e);
+                $datacount_e[$i] = count($data_e[$i]);
             }
             //$sql_e[$i] = "UPDATE equipment SET equipment.code = $code WHERE equipment.name=$equipment['$i']";
             //$result_e[$i] = $connect->query($sql_e);                  
