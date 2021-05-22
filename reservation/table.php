@@ -15,12 +15,13 @@
 
 </head>
 <?php include(dirname(__FILE__).'/include/header.php'); ?>
-<body>
+<main>
     <h2>予約テーブルページ</h2>
     <?php
         
         print "<p>session_name:". $_SESSION['name_ssn']. "</p>";
 
+        /*
         $connect = connect_db();
         $result = pg_query($connect, "SELECT * FROM reservation");
         $arr = pg_fetch_all($result);
@@ -53,8 +54,9 @@
 
         //DBとの接続を閉じる
         pg_close($connenct);
+        */
     ?>
     
-</body>
+</main>
 <?php include(dirname(__FILE__).'/include/footer.php'); ?>
 </html>
