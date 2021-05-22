@@ -47,6 +47,13 @@
 
         if(isset($_POST["ok"]))
         {
+            $_SESSION['registant'] = $_POST['registant'];
+            $_SESSION['date'] = $_POST['date'];
+            $_SESSION['start'] = $_POST['start'];
+            $_SESSION['finish'] = $_POST['finish'];
+            $_SESSION['num_of_people'] = $_POST['num_of_people'];
+            $_SESSION['purpose'] = $_POST['purpose'];
+
             $registant_inp = $_SESSION['registant'];
             $conf_room_inp = $_SESSION['conf_room'];
              //$equipment_inp = $_SESSION['equipment'];
