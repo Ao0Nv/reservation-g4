@@ -6,7 +6,9 @@
     <link rel="stylesheet" type="text/css" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/footer.css">
     <title>会議室・備品予約システム</title>
-
+    <?php
+      header('X-XSS-Protection: 0');
+    ?>
 </head>
 <?php include(dirname(__FILE__). '/include/header.php'); ?>
 <main>
