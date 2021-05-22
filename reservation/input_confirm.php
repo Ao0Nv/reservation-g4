@@ -67,21 +67,21 @@
               <td width="45%">備品数</td>
             </tr>
             <tr>
-              <td><input type="button" value="追加" onclick="insertTable()"></td>
+              <td><input type="button" value="追加" onclick="insertTable();"></td>
             </tr>
             <tr>
-              <td><input type='button' value="削除" onclick="deleteTable(getSort(this.parentNode.parentNode))"></td>
+              <td><input type='button' value="削除" onclick="deleteTable(getSort(this.parentNode.parentNode));"></td>
               <td>
                 <select name='equipment'>
                   <option value="null">選択してください</option>
-                    <option value='EPZON EP1010'>EPZON EP1010</option>
-                    <option value='EPZON EPS500'>EPZON EPS500</option>
-                    <option value='H実業　SKREEN60'>H実業　SKREEN60</option>
-                    <option value='H実業　SKREEN150'>H実業　SKREEN150</option>
-                    <option value='無線マイクロフォン'>無線マイクロフォン</option>
-                    <option value='OMKYO'>OMKYO</option>
-                    <option value='脚立'>脚立</option>
-                    <option value='巻コード'>巻コード</option>
+                  <option value='EPZON EP1010'>EPZON EP1010</option>
+                  <option value='EPZON EPS500'>EPZON EPS500</option>
+                  <option value='H実業　SKREEN60'>H実業　SKREEN60</option>
+                  <option value='H実業　SKREEN150'>H実業　SKREEN150</option>
+                  <option value='無線マイクロフォン'>無線マイクロフォン</option>
+                  <option value='OMKYO'>OMKYO</option>
+                  <option value='脚立'>脚立</option>
+                  <option value='巻コード'>巻コード</option>
                 </select>
               </td>
               <td><input type='text' value="" name='equipment_num'></td>
