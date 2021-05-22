@@ -74,7 +74,7 @@
             
             $stmt = $connect->prepare($sql);
             
-
+            /*
             //code---------------------------------------------------------
             $stmt -> bindValue(":code", $code, PDO::PARAM_STR);
 
@@ -98,7 +98,7 @@
             $stmt -> bindValue(":start", $created_start->format('hh:mm'), PDO::PARAM_STR);
             $stmt -> bindValue(":finish", $created_finish->format('hh:mm'), PDO::PARAM_STR);
             //-----------------------------------------------------------
-
+            */
 
 
             $stmt -> bindValue(":redistant", $redistant_inp, PDO::PARAM_STR);
@@ -141,14 +141,14 @@
             
                 print "<br>";
                 print "<h1></h1>";
-                print "<p>利用者名:". $_POST['registant']. "</p>";
-                print "<p>会議室　:". $_POST['conf_room']. "</p>";
-                print "<p>備品　　:". $_POST['equipment']. "</p>";
-                print "<p>備品数　:". $_POST['equipment_num']. "</p>";
-                print "<p>予約日　:". $_POST['date']. "</p>";
-                print "<p>予約時間:". $_POST['start']. "~" . $_SESSION['finish']."</p>";
-                print "<p>人数　　:". $_POST['num_of_people']. "</p>";
-                print "<p>目的　　:". $_POST['purpose']. "</p>";
+                print "<p>利用者名:". $_SESSION['registant']. "</p>";
+                print "<p>会議室　:". $_SESSION['conf_room']. "</p>";
+                print "<p>備品　　:". $_SESSION['equipment']. "</p>";
+                print "<p>備品数　:". $_SESSION['equipment_num']. "</p>";
+                print "<p>予約日　:". $_SESSION['date']. "</p>";
+                print "<p>予約時間:". $_SESSION['start']. "~" . $_SESSION['finish']."</p>";
+                print "<p>人数　　:". $_SESSION['num_of_people']. "</p>";
+                print "<p>目的　　:". $_SESSION['purpose']. "</p>";
 
                 print "<br>";
 
