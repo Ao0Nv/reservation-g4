@@ -21,6 +21,8 @@
         
         print "<p>session_name:". $_POST['name_ssn']. "</p>";
 
+        
+
         /*
         $connect = connect_db();
         $result = pg_query($connect, "SELECT * FROM reservation");
@@ -55,8 +57,14 @@
         //DBとの接続を閉じる
         pg_close($connenct);
         */
-    ?>
     
+    print "<form action = "."table.php"." method = "."post".">";
+    print "<p>$ _POST['name_ssn']";
+    print "<input type="."hidden"."name="."name_snn"."value=". "1" .">";
+    print "<input type="."submit"." value="."送信".">";
+    print "</form>";
+
+    ?>
 </main>
 <?php include(dirname(__FILE__).'/include/footer.php'); ?>
 </html>
