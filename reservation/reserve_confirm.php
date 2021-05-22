@@ -61,7 +61,9 @@
             
             $stmt = $connect->prepare($sql);
             
-            $stmt -> bindParam(":code", $code, PDO::PARAM_STR);
+
+            //code---------------------------------------------------------
+            $stmt -> bindValue(":code", $code, PDO::PARAM_STR);
 
             //date------------------------------------------------------
             $date_inp = new Date('2021-05-22');
@@ -74,22 +76,22 @@
             //time-------------------------------------------------------
             $start_inp = new Time('12:00');
             $finish_inp = new Time('12:00');
-            $stmt -> bindParam(":start", $start_inp->format('hh:mm'), PDO::PARAM_STR);
-            $stmt -> bindParam(":finish", $finish_inp->format('hh:mm'), PDO::PARAM_STR);
+            $stmt -> bindValue(":start", $start_inp->format('hh:mm'), PDO::PARAM_STR);
+            $stmt -> bindValue(":finish", $finish_inp->format('hh:mm'), PDO::PARAM_STR);
 
                 $created_start = $_SESSION['start'];
                 $created_finish = $_SESSION['finish'];
 
-            $stmt -> bindParam(":start", $created_start->format('hh:mm'), PDO::PARAM_STR);
-            $stmt -> bindParam(":finish", $created_finish->format('hh:mm'), PDO::PARAM_STR);
+            $stmt -> bindValue(":start", $created_start->format('hh:mm'), PDO::PARAM_STR);
+            $stmt -> bindValue(":finish", $created_finish->format('hh:mm'), PDO::PARAM_STR);
             //-----------------------------------------------------------
 
 
 
-            $stmt -> bindParam(":redistrant", $redistrant_inp, PDO::PARAM_STR);
-            $stmt -> bindParam(":num_of_people", $num_of_people_inp, PDO::PARAM_INT);
-            $stmt -> bindParam(":purpose", $purpose_inp, PDO::PARAM_STR);
-            $stmt -> bindParam(":status", $status, PDO::PARAM_STR);
+            $stmt -> bindValue(":redistrant", $redistrant_inp, PDO::PARAM_STR);
+            $stmt -> bindValue(":num_of_people", $num_of_people_inp, PDO::PARAM_INT);
+            $stmt -> bindValue(":purpose", $purpose_inp, PDO::PARAM_STR);
+            $stmt -> bindValue(":status", $status, PDO::PARAM_STR);
             
             $stmt->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
