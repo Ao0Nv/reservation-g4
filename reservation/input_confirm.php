@@ -16,7 +16,7 @@
     <?php
       if($_POST['error']==1)
       {
-        echo('<font color="red">会議室の最大人数を超えています。</font>')
+        echo('<font color="red">会議室の最大人数を超えています。</font>');
       }
     ?>
 
@@ -24,7 +24,7 @@
         利用者
         <label><input type="radio" id="user0" name="user" onClick="userflg0(this.checked);"/> 個人</label> 
         <label><input type="radio" id="user1" name="user" onClick="userflg1(this.checked);"/> 部署</label>
-        </p>
+
         <br>
         <lavel for="registant">利用者名 </lavel>
         <input type="text" name="registant">
