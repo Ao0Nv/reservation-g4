@@ -10,21 +10,6 @@
     <?php
         require_once('include/db_connect.php');
 
-        /*
-        function input_check_b(&$input, $key)
-        {
-            if(isset($_POST[$key]))
-            {
-                $input = preg_replace('/[^()ぁ-んァ-ヶｦ-ﾟ一-龠０-９a-zA-Z0-9\-]/', '', $_POST[$key]); 
-
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        */
     ?>
 </head>
 <?php include(dirname(__FILE__). '/include/header.php'); ?>
@@ -42,8 +27,8 @@
         $code = 0;
 
         $conf_room = "";
-        $equipment = "";
-        $equipment_num = "";
+        $equipment = [];
+        $equipment_num = [];
 
         $registant = $_POST['registant'];
         $date = $_POST['date'];
