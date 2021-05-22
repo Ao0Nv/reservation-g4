@@ -61,7 +61,7 @@
 
             $connect = connect_db();
 
-            $sql = ("INSERT INTO reservation VALUES(:code, :date, :start, :finish, :redistrant, :num_of_people, :purpose, :status)");
+            $sql = ("INSERT INTO reservation VALUES(:code, :date, :start, :finish, :redistant, :num_of_people, :purpose, :status)");
             
             $stmt = $connect->prepare($sql);
             
@@ -92,15 +92,15 @@
 
 
 
-            $stmt -> bindValue(":redistrant", $redistrant_inp, PDO::PARAM_STR);
+            $stmt -> bindValue(":redistant", $redistant_inp, PDO::PARAM_STR);
             $stmt -> bindValue(":num_of_people", $num_of_people_inp, PDO::PARAM_STR);
             $stmt -> bindValue(":purpose", $purpose_inp, PDO::PARAM_STR);
             $stmt -> bindValue(":status", $status, PDO::PARAM_STR);
             
             $stmt->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
-            //try
-            //{
+            try
+            {
                 $count_query = $connect -> query("SELECT * FROM reservation");
                 $count = $count_query -> rowCount();
                 $code = $count * 1;
@@ -110,11 +110,11 @@
                 header("Location: input_confirm.php");
                 exit();
                 
-            //}
-            //catch (PDOException $e)
-            //{
-            //    exit($e->getMessage());
-            //}
+            }
+            catch (PDOException $e)
+            {
+                exit($e->getMessage());
+            }
 
         }
         else
