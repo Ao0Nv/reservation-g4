@@ -67,10 +67,10 @@
               <td width="45%">備品数</td>
             </tr>
             <tr>
-              <td><input type="button" value="追加" onclick="insertTable ()"></td>
+              <td><input type="button" value="追加" onclick="insertTable()"></td>
             </tr>
             <tr>
-              <td><input type='button' value='削除' onclick='deleteTable (getSort(this.parentNode.parentNode));'></td>
+              <td><input type='button' value="削除" onclick="deleteTable(getSort(this.parentNode.parentNode))"></td>
               <td>
                 <select name='equipment'>
                   <option value="null">選択してください</option>
@@ -91,7 +91,7 @@
         <br>
         <input type="button" value="予約確定" onclick="setParamsName (); submit ();">
     </form>
-    <script type="text/javascript">
+    <script>
       function userflg0(ischecked)
       {
         if(ischecked == true)
