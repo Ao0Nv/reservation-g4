@@ -81,7 +81,7 @@
           </tbody>
         </table>
         <br>
-        <input type="submit" value="予約確定" onclick="setParamsName (); submit ();">
+        <input type="submit" value="予約確定" onclick="setParamsName ();">
     </form>
     <script type="text/javascript">
       function userflg0(ischecked)
@@ -118,11 +118,11 @@
           var cell0 = row.insertCell (0); // セルを追加
           var cell1 = row.insertCell (1); // セルを追加
           var cell2 = row.insertCell (2); // セルを追加
-          var cell3 = row.insertCell (3); // セルを追加
+          /*var cell3 = row.insertCell (3); // セルを追加
           var cell4 = row.insertCell (4); // セルを追加
           var cell5 = row.insertCell (5); // セルを追加
           var cell6 = row.insertCell (6); // セルを追加
-          var cell7 = row.insertCell (7); // セルを追加
+          var cell7 = row.insertCell (7); // セルを追加*/
 
           //セルに内容を設定
           cell0.innerHTML = "<input type='button' value='削除' onclick='deleteTable (getSort(this.parentNode.parentNode));'>";
