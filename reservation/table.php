@@ -15,7 +15,7 @@
 
 </head>
 <?php include(dirname(__FILE__).'/include/header.php'); ?>
-<main>
+<body>
     <h2>予約テーブルページ</h2>
     <?php
         
@@ -55,6 +55,6 @@
         pg_close($connenct);
     ?>
     
-</main>
+</body>
 <?php include(dirname(__FILE__).'/include/footer.php'); ?>
 </html>
