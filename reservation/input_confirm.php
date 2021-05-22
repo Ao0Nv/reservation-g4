@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/footer.css">
     <title>会議室・備品予約システム</title>
+    <script src = "equ_table.js"></script>
 
 </head>
 <?php include(dirname(__FILE__). '/include/header.php'); ?>
@@ -81,7 +82,7 @@
           </tbody>
         </table>
         <br>
-        <input type="submit" value="予約確定" onclick="setParamsName ();">
+        <input type="button" value="予約確定" onclick="setParamsName (); submit ();">
     </form>
     <script type="text/javascript">
       function userflg0(ischecked)
@@ -107,22 +108,25 @@
         }
       }
 
-
+      
       /**
       * 行追加
-      */
+      
       function insertTable () 
       {
+          
           var table1 = document.getElementById ("table");
           var row = table1.insertRow (2); // 行を追加（見出し、追加ボタンの次の行）
           var cell0 = row.insertCell (0); // セルを追加
           var cell1 = row.insertCell (1); // セルを追加
           var cell2 = row.insertCell (2); // セルを追加
+          //////////////////////
           /*var cell3 = row.insertCell (3); // セルを追加
           var cell4 = row.insertCell (4); // セルを追加
           var cell5 = row.insertCell (5); // セルを追加
           var cell6 = row.insertCell (6); // セルを追加
-          var cell7 = row.insertCell (7); // セルを追加*/
+          var cell7 = row.insertCell (7); // セルを追加
+          ///////////////////
 
           //セルに内容を設定
           cell0.innerHTML = "<input type='button' value='削除' onclick='deleteTable (getSort(this.parentNode.parentNode));'>";
@@ -142,7 +146,7 @@
 
       /**
       * 入力欄削除
-      */
+      
       function deleteTable (row) 
       {
           document.getElementById ("table").deleteRow (row);
@@ -150,7 +154,7 @@
 
       /**
       * 順番を調べる
-      */
+      
       function getSort (target) 
       {
           var nodeLists = document.getElementById ("table").childNodes[1].childNodes;
@@ -168,9 +172,10 @@
           }
           return 0;
       }
+      
       /**
       * パラメータ名を設定
-      */
+      
       function setParamsName () 
       {
           // 項目数を設定
@@ -210,7 +215,7 @@
               cnt++;
           }
           document.getElementById ("count_id").value = cnt;
-      }
+      }*/
 
     </script>
   </main>
