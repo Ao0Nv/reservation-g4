@@ -36,7 +36,7 @@
         $finish = $_POST['finish'];
         $num_of_people = $_POST['num_of_people'];
         $purpose = $_POST['purpose'];
-        $status = "wait";
+        $status = 'wait';
 
         $conf_room = $_POST['conf_room'];
 
@@ -58,7 +58,7 @@
             $count_r = $count_query -> rowCount();
             $code = $count_r * 1;
 
-            $sql_r = "INSERT INTO reservation VALUES('$code', '$date', '$start', '$finish', '$registant', '$num_of_people','$purpose', '$status')";
+            $sql_r = "CREATE DATABASE reservation INSERT INTO reservation VALUES('$code', '$date', '$start', '$finish', '$registant', '$num_of_people','$purpose', '$status')";
             $sql_e = "UPDATE equipment SET equipment.code = $code WHERE equipment.name=$equipment";
             $sql_c = "UPDATE conferece_room SET conferece_room.code = $code WHERE conferece_room.name=$conf_room";
             $stmt_r = $connect->prepare($sql_r);
