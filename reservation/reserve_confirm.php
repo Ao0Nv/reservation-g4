@@ -50,9 +50,10 @@
         $equipment = array_fill (0, $count_p, "");
         $equipment_num = array_fill (0, $count_p, "");
         for ($i = 0; $i < $count_p; $i++) 
-        {
+        {       
             $equipment     [$i] = $_POST ['$param1_' . $i];
             $equipment_num [$i] = $_POST ['$param2_' . $i];
+            echo('eqp'.$equipment[$i]);
         }
 
         try
