@@ -73,11 +73,19 @@
             $datacount_r = count($data_r);
 
             //equipment_table
-            $sql_e = "UPDATE equipment SET equipment.code = $code WHERE equipment.name=$equipment";
-            $result_e = $connect->query($sql_e);                  
-            $data_e = $result_e->fetchAll();  
-            $datacount_e = count($data_e);
+            for ($i = 0; $i < $count_p; $i++) 
+            {
+                $sql_e[$i] = "UPDATE equipment SET equipment.code = $code WHERE equipment.name=$equipment[$i]";
+                $result_e[$i] = $connect->query($sql_e[$i]);                  
+                $data_e[$i] = $result_e->fetchAll();  
+                $datacount_e[$i] = count($data_e);
+            }
+            //$sql_e[$i] = "UPDATE equipment SET equipment.code = $code WHERE equipment.name=$equipment['$i']";
+            //$result_e[$i] = $connect->query($sql_e);                  
+            //$data_e[$i] = $result_e->fetchAll();  
+            //$datacount_e[$i] = count($data_e);
 
+            //conferece_room
             $sql_c = "UPDATE conferece_room SET conferece_room.code = $code WHERE conferece_room.name=$conf_room";
             $result_c = $connect->query($sql_c);                  
             $data_c = $result_c->fetchAll();  
@@ -108,8 +116,13 @@
         print "<h1></h1>";
         print "<p>利用者名:". $registant. "</p>";
         print "<p>会議室　:". $conf_room. "</p>";
-        print "<p>備品　　:". $equipment. "</p>";
-        print "<p>備品数　:". $equipment_num. "</p>";
+        for ($i = 0; $i < $count_p; $i++) 
+        {
+            print "<p>備品["."$i"."]:". $equipment[$i]. "</p>";
+            print "<p>備品数["."$i"."]:". $equipment_num[$i]. "</p>";
+        }
+        //print "<p>備品　　:". $equipment. "</p>";
+        //print "<p>備品数　:". $equipment_num. "</p>";
         print "<p>予約日　:". $date. "</p>";
         print "<p>予約時間:". $start. "~" . $finish."</p>";
         print "<p>人数　　:". $num_of_people. "</p>";
