@@ -9,8 +9,9 @@
     try {
     	$connect = new PDO($dsn, $user, $password);     //最初これ必要
 
+        $code = "3";
         ///////////////////////////////////////////////////////////////////////////////////////////
-        $sql = "INSERT INTO reservation VALUES('2','2021-5-29','9:20','11:30','bbbbbb','10','親睦会','wait')";    //SQL文
+        $sql = "INSERT INTO reservation VALUES('$code','2021-5-28','9:00','12:00','cccccc','15','説明会','wait')";    //SQL文
         $result = $connect->query($sql);                  //sql実行?
         $datas = $result->fetchAll();                     //データベースを$datasに格納
         /////////////////////////////////////////////////////////////////////////////////////////////
