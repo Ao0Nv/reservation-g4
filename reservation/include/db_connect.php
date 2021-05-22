@@ -1,11 +1,11 @@
 <?php
     function connect_db()
     {
-        $server = "ec2-54-90-13-87.compute-1.amazonaws.com";
-        $database = "d1gsgcv5rqsvoc";
+        $server = "ec2-52-0-114-209.compute-1.amazonaws.com";
+        $database = "daqf6kt1g4926a";
         $port_number = 5432;
-        $user_id = "embzsaahgcxswh";
-        $user_password = "007dc962782174807e8f71439970a83caefffb2de91754969788625aff742c1d";
+        $user_id = "fixkfmqbxlymrn";
+        $user_password = "266fc304db7de88db3a21a36a8fb058bfbdb517cc1260a524760560cfc5d771b";
         
         $connect = new PDO("pgsql:host=$server;dbname=$database;port=$port_number;user=$user_id;password=$user_password");
 
