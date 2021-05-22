@@ -58,7 +58,7 @@
             $count_r = $count_query -> rowCount();
             $code = $count_r * 1;
 
-            $sql_r = "INSERT INTO reservation(code) VALUES('$code', '$date', '$start', '$finish', '$registant', '$num_of_people','$purpose', '$status')";
+            $sql_r = "INSERT INTO reservation VALUES('$code', '$date', '$start', '$finish', '$registant', '$num_of_people','$purpose', '$status')";
             $sql_e = "UPDATE equipment SET equipment.code = $code WHERE equipment.name=$equipment";
             $sql_c = "UPDATE conferece_room SET conferece_room.code = $code WHERE conferece_room.name=$conf_room";
             $stmt_r = $connect->prepare($sql_r);
