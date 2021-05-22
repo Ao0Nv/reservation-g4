@@ -93,7 +93,7 @@
     </form>
     
     <script>
-    /*
+    
       function userflg0(ischecked)
       {
         if(ischecked == true)
@@ -165,7 +165,7 @@
           return 0;
       }
       
-      /*
+      
       function setParamsName () 
       {
           var nodeLists = document.getElementById ("table").childNodes[1].childNodes;
@@ -205,7 +205,7 @@
           }
           document.getElementById ("count_id").value = cnt;
       }
-      */
+      
     </script>
   </main>
   <?php include(dirname(__FILE__). '/include/footer.php'); ?>
