@@ -12,7 +12,7 @@
 <main>
     <h2>予約</h2>
     <br>
-    <form action = "reservate.php" method = "post">
+    <form action = "reserve_confirm.php" method = "post">
         利用者
         <label><input type="radio" id="user0" name="user" onClick="userflg0(this.checked);"/> 個人</label> 
         <label><input type="radio" id="user1" name="user" onClick="userflg1(this.checked);"/> 部署</label>
