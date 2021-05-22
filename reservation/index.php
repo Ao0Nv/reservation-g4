@@ -10,12 +10,6 @@
 </head>
 <?php include(dirname(__FILE__).'/include/header.php'); ?>
 <main>
-    <form action = "table.php" method = "post">
-        <lavel for="registant">名 </lavel>
-        <input type="text" name="name_ssn">
-        <input type="submit" value="送信">
-    </form>
-
     <button type=“button” onclick="location.href='input_confirm.php'">予約へ</button>
     <button type=“button” onclick="location.href='table.php'">テーブル確認</button>
 </main>
