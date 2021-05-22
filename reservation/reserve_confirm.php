@@ -32,7 +32,7 @@
     <h2>予約情報確認ページ</h2>
 
     <?php
-        /*
+        
         $registant_inp = "";
         $date_inp = "";
         $start_inp = "";
@@ -61,7 +61,7 @@
 
             $connect = connect_db();
 
-            $sql = "INSERT INTO reservation VALUES(:code, :date, :start, :finish, :redistrant, :num_of_people, :purpose, :status)";
+            $sql = ("INSERT INTO reservation VALUES(:code, :date, :start, :finish, :redistrant, :num_of_people, :purpose, :status)");
             
             $stmt = $connect->prepare($sql);
             
@@ -93,14 +93,14 @@
 
 
             $stmt -> bindValue(":redistrant", $redistrant_inp, PDO::PARAM_STR);
-            $stmt -> bindValue(":num_of_people", $num_of_people_inp, PDO::PARAM_INT);
+            $stmt -> bindValue(":num_of_people", $num_of_people_inp, PDO::PARAM_STR);
             $stmt -> bindValue(":purpose", $purpose_inp, PDO::PARAM_STR);
             $stmt -> bindValue(":status", $status, PDO::PARAM_STR);
             
             $stmt->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
-            try
-            {
+            //try
+            //{
                 $count_query = $connect -> query("SELECT * FROM reservation");
                 $count = $count_query -> rowCount();
                 $code = $count * 1;
@@ -110,18 +110,18 @@
                 header("Location: input_confirm.php");
                 exit();
                 
-            }
-            catch (PDOException $e)
-            {
-                exit($e->getMessage());
-            }
+            //}
+            //catch (PDOException $e)
+            //{
+            //    exit($e->getMessage());
+            //}
 
         }
         else
         {
             if(1/*input_check($registant_inp, 'registrant') and input_check($date_inp, 'date') and
                 input_check($start_inp, 'start') and input_check($finish_inp, 'finish') and 
-                input_check($num_of_people_inp, 'num_of_people') and input_check($purpose_inp, 'purpose'))
+                input_check($num_of_people_inp, 'num_of_people') and input_check($purpose_inp, 'purpose')*/)
             {
                 $_SESSION['registant'] = $registant_inp;
                 $_SESSION['date'] = $date_inp;
@@ -156,7 +156,6 @@
             }
         }
         $connect = null;
-        */
     ?>
 </main>
 <?php include(dirname(__FILE__). '/include/footer.php'); ?>
