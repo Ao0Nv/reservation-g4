@@ -1,14 +1,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-XSS-Protection" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial -scale=1.0">
     <link rel="stylesheet" type="text/css" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/footer.css">
     <title>会議室・備品予約システム</title>
-    <?php
-      header('X-XSS-Protection: 0');
-    ?>
+
 </head>
 <?php include(dirname(__FILE__). '/include/header.php'); ?>
 <main>
