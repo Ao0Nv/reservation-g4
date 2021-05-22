@@ -19,7 +19,7 @@
     <h2>予約テーブルページ</h2>
     <?php
         
-        print "<p>session_name:". $_SESSION['name_ssn']. "</p>";
+        print "<p>session_name:". $_POST['name_ssn']. "</p>";
 
         /*
         $connect = connect_db();
