@@ -61,7 +61,7 @@
     print "<form action = "."table.php"." method = "."post".">";
     print "<p>$ _POST['name_ssn']";
     print "<input type="."hidden"."name="."name_snn"."value=". "1" .">";
-    print "<input type="."submit"." value="."送信".">";
+    print "<input type="."button"." value="."送信".">";
     print "</form>";
 
     ?>
