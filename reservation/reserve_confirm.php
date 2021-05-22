@@ -10,6 +10,7 @@
     <?php
         require_once('include/db_connect.php');
 
+        /*
         function input_check_b(&$input, $key)
         {
             if(isset($_POST[$key]))
@@ -23,12 +24,15 @@
                 return false;
             }
         }
+        */
     ?>
 </head>
 <?php include(dirname(__FILE__). '/include/header.php'); ?>
 <main>
     <h2>予約情報確認ページ</h2>
+
     <?php
+        /*
         $registant_inp = "";
         $date_inp = "";
         $start_inp = "";
@@ -38,15 +42,15 @@
         $code = 0;
 
         $conf_room_inp = "";
-        $equipment_inp = "";
-        $equipment_num_inp = "";
+         //$equipment_inp = "";
+         //$equipment_num_inp = "";
 
         if(isset($_POST["ok"]))
         {
             $registant_inp = $_SESSION['registant'];
             $conf_room_inp = $_SESSION['conf_room'];
-            $equipment_inp = $_SESSION['equipment'];
-            $equipment_num_inp = $_SESSION['equipment_num'];
+             //$equipment_inp = $_SESSION['equipment'];
+             //$equipment_num_inp = $_SESSION['equipment_num'];
             //$date_inp = $_SESSION['date'];
             //$start_inp = $_SESSION['start'];
             //$finish_inp = $_SESSION['finish'];
@@ -117,7 +121,7 @@
         {
             if(1/*input_check($registant_inp, 'registrant') and input_check($date_inp, 'date') and
                 input_check($start_inp, 'start') and input_check($finish_inp, 'finish') and 
-                input_check($num_of_people_inp, 'num_of_people') and input_check($purpose_inp, 'purpose')*/)
+                input_check($num_of_people_inp, 'num_of_people') and input_check($purpose_inp, 'purpose'))
             {
                 $_SESSION['registant'] = $registant_inp;
                 $_SESSION['date'] = $date_inp;
@@ -152,6 +156,7 @@
             }
         }
         $connect = null;
+        */
     ?>
 </main>
 <?php include(dirname(__FILE__). '/include/footer.php'); ?>
