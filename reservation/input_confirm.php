@@ -12,7 +12,14 @@
 <main>
     <h2>予約</h2>
     <br>
-    
+
+    <?php
+      if($_POST['error']==1)
+      {
+        echo('<font color="red">会議室の最大人数を超えています。</font>')
+      }
+    ?>
+
     <form action = "reserve_confirm.php" method = "post">
         利用者
         <label><input type="radio" id="user0" name="user" onClick="userflg0(this.checked);"/> 個人</label> 
