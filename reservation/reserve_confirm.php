@@ -51,8 +51,8 @@
         $equipment_num = array_fill (0, $count_p, "");
         for ($i = 0; $i < $count_p; $i++) 
         {
-            $equipment     [$i] = $_POST ['$equipment' . $i];
-            $equipment_num [$i] = $_POST ['$equipment_num' . $i];
+            $equipment     [$i] = $_POST ['$param1_' . $i];
+            $equipment_num [$i] = $_POST ['$param2_' . $i];
         }
 
         try

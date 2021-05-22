@@ -72,7 +72,7 @@
             <tr>
               <td><input type='button' value="削除" onclick="deleteTable(getSort(this.parentNode.parentNode));"></td>
               <td>
-                <select name='equipment'>
+                <select name='param1_'>
                   <option value="null">選択してください</option>
                   <option value='EPZON EP1010'>EPZON EP1010</option>
                   <option value='EPZON EPS500'>EPZON EPS500</option>
@@ -84,7 +84,7 @@
                   <option value='巻コード'>巻コード</option>
                 </select>
               </td>
-              <td><input type='text' value="" name='equipment_num'></td>
+              <td><input type='text' value="" name='param2_'></td>
             </tr>
           </tbody>
         </table>
@@ -126,7 +126,7 @@
           var cell2 = row.insertCell (2); 
           
           cell0.innerHTML = "<input type='button' value='削除' onclick='deleteTable (getSort(this.parentNode.parentNode));'>";
-          cell1.innerHTML = "<select name='equipment'>"
+          cell1.innerHTML = "<select name='param1_'>"
                           + "<option value='' > 選択してください </option>"
                           + "<option value='EPZON EP1010'>EPZON EP1010</option>"
                           + "<option value='EPZON EPS500'>EPZON EPS500</option>"
@@ -137,7 +137,7 @@
                           + "<option value='脚立'>脚立</option>"
                           + "<option value='巻コード'>巻コード</option>"
                           + "</select>";
-          cell2.innerHTML = "<input type='text' value='' name = 'equipment_num' > ";
+          cell2.innerHTML = "<input type='text' value='' name = 'param2_' > ";
       }
 
       
@@ -153,7 +153,7 @@
           for (var i = 0; i < nodeLists.length; i++) 
           {
               var node = nodeLists.item (i);
-              if (node.tagName == "equipment") 
+              if (node.tagName == "TR") 
               {
                   trCount++;
               }
