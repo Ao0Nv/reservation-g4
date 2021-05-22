@@ -138,6 +138,7 @@
           cell2.innerHTML = "<input type='text' value='' name = 'equipment_num' > ";
       }
 
+      /*
       function deleteTable (row) 
       {
           document.getElementById ("table").deleteRow (row);
