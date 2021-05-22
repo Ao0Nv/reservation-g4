@@ -89,7 +89,7 @@
           </tbody>
         </table>
         <br>
-        <input type="button" value="予約確定" onclick="setParamsName (); submit ();">
+        <input type="button" value="予約確定" onclick="setParamsName (); submit ();"/>
     </form>
     <script>
       function userflg0(ischecked)
@@ -150,7 +150,7 @@
           for (var i = 0; i < nodeLists.length; i++) 
           {
               var node = nodeLists.item (i);
-              if (node.tagName == "TR") 
+              if (node.tagName == "equipment") 
               {
                   trCount++;
               }
