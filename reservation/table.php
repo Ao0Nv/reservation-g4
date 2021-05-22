@@ -18,8 +18,11 @@
 <main>
     <h2>予約テーブルページ</h2>
     <?php
+        
+        print "<p>session_name:". $_SESSION['name_ssn']. "</p>";
+
         $connect = connect_db();
-        $result = pg_query($conn, "SELECT * FROM reservation");
+        $result = pg_query($connect, "SELECT * FROM reservation");
         $arr = pg_fetch_all($result);
 
         print "<table id=\"dblist\" summary=\"PostgreSQLのデータベースの一覧\">\n";
@@ -28,9 +31,10 @@
         //テーブルヘッダとしてフィールド（カラム）名を出力
         print "<tr>\n";
         $flds = pg_num_fields($result);
-        for($i=0; $i<$flds; $i++){
-        $field = pg_field_name($result, $i);
-        printf("<th abbr=\"%s\">%s</th>\n", $field, $field);
+        for($i=0; $i<$flds; $i++)
+        {
+            $field = pg_field_name($result, $i);
+            printf("<th abbr=\"%s\">%s</th>\n", $field, $field);
         }
         print "</tr>\n";
 
